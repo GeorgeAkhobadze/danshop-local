@@ -1,0 +1,99 @@
+.product-catalog-hero {
+  padding: 22.4rem 0px 14.2rem 0px;
+  position: relative;
+}
+
+.product-catalog-hero img {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-catalog-hero--blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff52;
+  opacity: 1;
+  backdrop-filter: blur(5px);
+}
+
+.product-name--workshop {
+  font-size: 6rem !important;
+  padding: 3.5rem 0rem 3rem 0rem !important;
+}
+
+.product-catalog-hero__title {
+  font-family: "Futura";
+  font-size: 5rem;
+  max-width: 126rem;
+  text-align: center;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.products-section-wrapper {
+  padding: 16.5rem 0rem 13.5rem 0rem;
+}
+
+.products-section-wrapper--top {
+  padding-bottom: 0 !important;
+}
+
+.products-section-wrapper h3 {
+  font-size: 6rem;
+  margin: 0rem 0rem 4rem 0rem;
+  text-align: center;
+}
+
+.products-section-wrapper p {
+  max-width: 155rem;
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Raleway";
+  font-size: 3rem;
+  margin-bottom: 9rem;
+}
+
+.participant-input {
+  width: 45.5rem;
+  padding-bottom: 2.6rem;
+  font-family: "Raleway";
+  outline: none;
+  border: none;
+  font-size: 3rem;
+  border-bottom: 3px solid #000000;
+  margin: 0 auto;
+}
+
+.participant-input::-webkit-outer-spin-button,
+.participant-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.products-section-wrapper--location {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8rem;
+}
+
+.submit-participants-btn {
+  padding: 0.7rem 2.3rem;
+  outline: none;
+  border: none;
+  background-color: #000000;
+  color: #fff;
+  font-size: 3.2rem;
+  font-family: "Raleway";
+  cursor: pointer;
+}

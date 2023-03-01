@@ -1,0 +1,32 @@
+.workshop-question-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  gap: 9rem;
+}
+
+.workshop-question-title {
+  font-family: "Futura";
+  font-size: 6rem;
+  color: black;
+}
+
+.workshop-question-btn {
+  border: none;
+  padding-bottom: 1.75rem;
+  background-color: transparent;
+  font-family: "Raleway";
+  font-size: 5rem;
+  border-bottom: 3px solid black;
+  cursor: pointer;
+}
+
+.workshop-question-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8.6rem;
+}
