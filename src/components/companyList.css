@@ -8,6 +8,7 @@
   padding-bottom: 12.1rem;
   gap: 10rem;
   flex-grow: 1;
+  width: 100%;
 }
 
 .company-list--wrapper h1 {

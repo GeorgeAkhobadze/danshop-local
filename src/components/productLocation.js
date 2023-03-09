@@ -36,6 +36,17 @@ const ProductLocation = () => {
 
   const updateModerators = (value) => {
     setParticipantCount(value * 1);
+    console.log(value > 12);
+    if (value > 12) {
+      setModeratorCount(2);
+    } else if (value <= 12) {
+      setModeratorCount(1);
+    }
+    if (value > 24) {
+      setAssistantCount(2);
+    } else if (value <= 24) {
+      setAssistantCount(1);
+    }
   };
 
   const submitParticipants = () => {
@@ -55,9 +66,9 @@ const ProductLocation = () => {
   useEffect(() => {
     console.log(participantsSubmitted);
     if (participantsSubmitted == true) {
-      console.log(
-        `/${product.name}/${product.workshop.workshopType}/${product.id}/modules`
-      );
+      // console.log(
+      //   `/${product.name}/${product.workshop.workshopType}/${product.id}/modules`
+      // );
       navigate(
         `/${product.name}/${product.workshop.workshopType}/${product.id}/modules`
       );

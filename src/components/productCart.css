@@ -1,0 +1,53 @@
+.module-container-cart {
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.module-heading-cart {
+  font-size: 3.5rem;
+  font-family: "Futura";
+}
+
+.product-title-price {
+  font-family: "Raleway";
+}
+
+.cart-price-container {
+  padding-bottom: 1.4rem;
+  border-bottom: 3px solid #000;
+  font-size: 5rem;
+  font-family: "Futura";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  margin-bottom: 14.4rem;
+}
+
+.cart-price-container span {
+  font-family: "Raleway";
+}
+
+.generate-invoice-btn {
+  align-self: center;
+  padding: 1.4rem 2.3rem;
+  outline: none;
+  border: none;
+  background-color: #000000;
+  color: #fff;
+  font-size: 4.3rem;
+  font-family: "Raleway";
+  cursor: pointer;
+  margin-bottom: 18rem;
+}
+
+.remove-product-btn {
+  align-self: flex-end;
+  background: transparent;
+  outline: none;
+  border: none;
+  font-size: 3.2rem;
+  margin-top: 2.4rem;
+  font-family: "Raleway";
+  cursor: pointer;
+}

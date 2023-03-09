@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import ProductCreate from "./productCreate";
 import "./productModules.css";
+import modalCloseBtn from "../assets/modal-close-btn.svg";
 const ProductModules = () => {
   const { productId } = useParams();
   const navigate = useNavigate();
   const [product, setProduct] = useState(
     JSON.parse(localStorage.getItem("products"))[productId]
   );
+  const [modalOpen, setModalOpen] = useState(false);
   const updateChangesLocal = (updatedProduct) => {
     const existingArray = JSON.parse(localStorage.getItem("products"));
     const index = existingArray.findIndex((obj) => obj.id === productId);
@@ -612,7 +614,44 @@ const ProductModules = () => {
   };
 
   return (
-    <div>
+    <div className="module-wrapper">
+      {modalOpen && (
+        <div className="modal-container">
+          <div className="modal-background" />
+          <div className="modal">
+            <div
+              className="modal-close-btn"
+              onClick={() => setModalOpen(false)}
+            >
+              <img src={modalCloseBtn} />
+            </div>{" "}
+            <div className="modal-title">
+              FANTASTISCH!
+              <br /> WORKSHOP LIEGT NUN IM WARENKORB
+              <br /> WAS STEHT NUN AN?
+            </div>
+            <div className="buttons-container buttons-container-modal">
+              <button
+                className="button-back button-modal"
+                onClick={() => navigate("/products")}
+              >
+                WEITERE PRODUKTE HINZUFÜGEN
+              </button>{" "}
+              <button
+                className="button-next button-modal"
+                onClick={() => navigate(`/${productId}/overview`)}
+              >
+                ZUM WARENKORB
+              </button>
+            </div>
+            <p className="modal-bottom-text">
+              Der Angebotsprozess ist wie ein vor-konfektioniertes Angebot. Er
+              bieten einen vordefinierten, logischen und erprobten
+              Projektprozess,
+            </p>
+          </div>
+        </div>
+      )}
       <div className="product-modules-hero">
         <div className="product-modules-hero--blur"></div>
         <h3>
@@ -663,7 +702,9 @@ const ProductModules = () => {
         </div>
         <div className="buttons-container">
           <button className="button-back">ZURÜCK</button>
-          <button className="button-next">WEITER</button>
+          <button className="button-next" onClick={() => setModalOpen(true)}>
+            WEITER
+          </button>
         </div>
       </div>{" "}
     </div>

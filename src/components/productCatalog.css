@@ -3,6 +3,10 @@
   position: relative;
 }
 
+.product-catalog-container {
+  width: 100%;
+}
+
 .product-catalog-hero img {
   position: absolute;
   z-index: -1;
@@ -41,6 +45,8 @@
 
 .products-section-wrapper {
   padding: 16.5rem 0rem 13.5rem 0rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .products-section-wrapper--top {

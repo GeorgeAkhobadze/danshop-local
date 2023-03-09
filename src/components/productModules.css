@@ -2,19 +2,39 @@
   padding: 10rem 18.5rem 10rem 18.5rem;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  box-sizing: border-box;
   gap: 11.2rem;
+}
+
+.product-module-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.module-wrapper {
+  width: 100%;
 }
 
 .product-module-title {
   font-size: 5rem;
   font-family: "Futura";
   padding-bottom: 6rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .product-modules-hero {
   padding: 19rem 0rem 11.3rem 0rem;
   background-image: url("../assets/beidan-bg-img.svg");
   background-position: center;
+  width: 100%;
+  box-sizing: border-box;
   object-fit: cover;
   position: relative;
 }
@@ -55,6 +75,7 @@
   flex-direction: column;
   margin-left: 5rem;
   gap: 4rem;
+  width: 100%;
 }
 
 .module-container p {
@@ -95,6 +116,7 @@
 .buttons-container {
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 
 .button-next {
@@ -105,6 +127,7 @@
   outline: none;
   border: none;
   font-size: 4.3rem;
+  cursor: pointer;
 }
 
 .button-back {
@@ -115,4 +138,87 @@
   border-bottom: 3px solid black;
   font-family: "Raleway";
   font-size: 4.3rem;
+  cursor: pointer;
+}
+
+.modal-container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-background {
+  left: 0;
+  top: 0;
+  z-index: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(30px);
+  position: absolute;
+}
+
+.modal {
+  position: relative;
+  z-index: 100;
+  background-color: #fff;
+  width: 118rem;
+  padding: 8.5rem 6.4rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-title {
+  font-size: 4rem;
+  font-family: "Futura";
+  letter-spacing: 0px;
+  text-align: center;
+}
+
+.button-modal {
+  font-size: 1.7rem;
+  height: 100%;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  cursor: pointer;
+}
+
+.buttons-container-modal {
+  display: flex;
+  gap: 4rem;
+  width: 100%;
+  margin-right: 4.5rem;
+  justify-content: center;
+  padding-top: 4rem;
+}
+
+.modal-bottom-text {
+  margin: 0px;
+  font-family: "Raleway";
+  text-align: center;
+  font-size: 1.5rem;
+  color: #707070;
+  padding-top: 5.4rem;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 2rem;
+  right: 2.6rem;
+  width: 2rem;
+  height: 2rem;
+}
+
+.modal-close-btn img {
+  width: 100%;
+  height: 100%;
 }

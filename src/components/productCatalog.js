@@ -41,6 +41,7 @@ const ProductCatalog = () => {
       catering: {},
       teamBuilding: {},
       priceAmount: 5000,
+      isInCart: false,
     };
     existingObject.push(newObject);
     localStorage.setItem("products", JSON.stringify(existingObject));
@@ -48,7 +49,7 @@ const ProductCatalog = () => {
   };
 
   return (
-    <div className="App">
+    <div className="product-catalog-container">
       <div className="product-catalog-hero">
         <img src={pureBgImg} />
         <div className="product-catalog-hero--blur"></div>

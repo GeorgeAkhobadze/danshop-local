@@ -12,6 +12,8 @@ import Header from "./components/header/header";
 import LandingPage from "./components/landingPage";
 import CompanyList from "./components/companyList";
 import ProductCart from "./components/productCart";
+import ProductCatering from "./components/productCatering";
+import ProductOverview from "./components/productOverview";
 
 function App() {
   let { userId } = useParams();
@@ -36,7 +38,12 @@ function App() {
           path="/:productType?/:workshopType?/:productId?/location"
           element={<ProductLocation />}
         />
-        {/* <Route path="/cart" element={<ProductCart />} /> */}
+        <Route
+          path="/:productType?/:workshopType?/:productId?/catering"
+          element={<ProductCatering />}
+        />
+        <Route path="/:productId?/overview" element={<ProductOverview />} />
+        <Route path="/cart" element={<ProductCart />} />
       </Routes>
     </div>
   );

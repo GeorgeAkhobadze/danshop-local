@@ -10,24 +10,12 @@ let products = JSON.parse(localStorage.getItem("products"));
 const ProductType = () => {
   let navigate = useNavigate();
   const { productId } = useParams();
-  const [page, setPage] = useState(2);
+  const [page, setPage] = useState(1);
   const [functionRan, setFunctionRan] = useState(false);
   const product = JSON.parse(localStorage.getItem("products"))[productId];
   const [myObject, setMyObject] = useState(
     JSON.parse(localStorage.getItem("products"))[productId]
   );
-
-  useEffect(() => {
-    // console.log(JSON.parse(localStorage.getItem("products"))[productId]);
-    // if (
-    //   JSON.parse(localStorage.getItem("products"))[productId].name ==
-    //     "NAMING" ||
-    //   JSON.parse(localStorage.getItem("products"))[productId].name ==
-    //     "CORPORATE_DESIGN"
-    // ) {
-    //   setPage(1);
-    // }
-  }, []);
 
   const updateChangesLocal = (updatedProduct) => {
     const existingArray = JSON.parse(localStorage.getItem("products"));
@@ -47,22 +35,28 @@ const ProductType = () => {
     };
     updateChangesLocal(updatedProduct);
     setMyObject(updatedProduct);
-    setFunctionRan(true);
+    console.log(myObject);
+    // setFunctionRan(true);
   };
 
   useEffect(() => {
-    const myObject = JSON.parse(localStorage.getItem("products"))[productId];
-    console.log(functionRan && myObject?.workshop.workshopType == "Analog");
-    if (functionRan && myObject?.workshop.workshopType == "Analog") {
-      console.log("opala");
+    // const myObject = JSON.parse(localStorage.getItem("products"))[productId];
+    console.log(myObject?.workshop.workshopType);
+    if (myObject?.workshop.workshopType == "Analog") {
       navigate(
         `/${myObject?.name}/${myObject?.workshop.workshopType}/${myObject?.id}/location`
       );
     }
-  }, [functionRan]);
+    if (
+      myObject?.name === "MARKENENTWICKLUNG" ||
+      myObject?.name === "VISIONSENTWICKLUNG"
+    ) {
+      setPage(2);
+    }
+  }, [handleWorkshopChange]);
 
   const handleWorkshopButton = (value) => {
-    navigate(`/${myObject.name}/nworkshop/${myObject.id}/modules`);
+    navigate(`/${myObject.name}/workshop/${myObject.id}/modules`);
   };
 
   return (
@@ -81,7 +75,7 @@ const ProductType = () => {
             </button>
             <button
               className="workshop-question-btn"
-              onClick={() => handleWorkshopButton(false)}
+              onClick={() => handleWorkshopButton()}
             >
               NO{" "}
             </button>

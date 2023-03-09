@@ -6,14 +6,14 @@ import "./header.css";
 const Header = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const products = JSON.parse(localStorage.getItem("products"));
+
   return (
-    <header
-      onClick={() => navigate("/")}
-      className={`${location.pathname === "/" ? "header--black" : ""}`}
-    >
+    <header className={`${location.pathname === "/" ? "header--black" : ""}`}>
       <div>
         <img
           className="header-logo"
+          onClick={() => navigate("/")}
           src={location.pathname === "/" ? logoWhite : logoBlack}
         />
       </div>
@@ -25,7 +25,12 @@ const Header = () => {
           <li className="header-nav__item">Dashboard</li>
           <li className="header-nav__item">Einkaufskorb</li>
           <li className="header-nav__item">Support</li>
-          <li className="header-nav__item">
+          <li className="header-nav__item" onClick={() => navigate("/cart")}>
+            {console.log(products?.length)}
+            {products?.length > 0 && (
+              <div className="header-cart-qty">{products?.length}</div>
+            )}
+
             <img src={cartIcon} />
           </li>
         </ul>
