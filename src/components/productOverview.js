@@ -1,8 +1,13 @@
+import { useState } from "react";
 import { useNavigate, useParams } from "react-router";
+import modalCloseBtn from "../assets/modal-close-btn.svg";
 import "./productOverview.css";
 const ProductOverview = () => {
   const { productId } = useParams();
   const product = JSON.parse(localStorage.getItem("products"))[productId];
+  const [updateState, setUpdateState] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
+
   console.log(product);
   const updateChangesLocal = (updatedProduct) => {
     const existingArray = JSON.parse(localStorage.getItem("products"));
@@ -15,16 +20,59 @@ const ProductOverview = () => {
     localStorage.setItem("products", JSON.stringify(newArray));
   };
   const navigate = useNavigate();
-  const handleProductSubmit = () => {
+  const handleProductSubmit = (value) => {
     const newObject = {
       ...product,
       isInCart: true,
     };
     updateChangesLocal(newObject);
-    navigate("/cart");
+    if (value === true) {
+      navigate("/cart");
+    } else {
+      navigate("/products");
+    }
+
+    setUpdateState(true);
   };
   return (
     <>
+      {modalOpen && (
+        <div className="modal-container">
+          <div className="modal-background" />
+          <div className="modal">
+            <div
+              className="modal-close-btn"
+              onClick={() => setModalOpen(false)}
+            >
+              <img src={modalCloseBtn} />
+            </div>{" "}
+            <div className="modal-title">
+              FANTASTISCH!
+              <br /> WORKSHOP LIEGT NUN IM WARENKORB
+              <br /> WAS STEHT NUN AN?
+            </div>
+            <div className="buttons-container buttons-container-modal">
+              <button
+                className="button-back button-modal"
+                onClick={() => handleProductSubmit(false)}
+              >
+                WEITERE PRODUKTE HINZUFÜGEN
+              </button>{" "}
+              <button
+                className="button-next button-modal"
+                onClick={() => handleProductSubmit(true)}
+              >
+                ZUM WARENKORB
+              </button>
+            </div>
+            <p className="modal-bottom-text">
+              Der Angebotsprozess ist wie ein vor-konfektioniertes Angebot. Er
+              bieten einen vordefinierten, logischen und erprobten
+              Projektprozess,
+            </p>
+          </div>
+        </div>
+      )}
       <div className="product-modules-hero">
         <div className="product-modules-hero--blur"></div>
         <h3>{product?.name} OVERVIEW</h3>
@@ -78,7 +126,7 @@ const ProductOverview = () => {
 
         <button
           className="button-next button-next-overview"
-          onClick={() => handleProductSubmit(true)}
+          onClick={() => setModalOpen(true)}
         >
           WEITER
         </button>

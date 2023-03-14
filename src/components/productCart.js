@@ -1,11 +1,12 @@
 import "./productModules.css";
 import "./productCart.css";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 const ProductCart = () => {
   const productList = JSON.parse(localStorage.getItem("products"));
   const [totalPrice, setTotalPrice] = useState(0);
   const [updateList, setUpdateList] = useState(false);
-
+  const navigate = useNavigate();
   function removeProductById(id) {
     const index = productList.findIndex((product) => product.id === id);
     if (index !== -1) {
@@ -13,6 +14,7 @@ const ProductCart = () => {
       localStorage.setItem("products", JSON.stringify(productList));
     }
     setUpdateList(true);
+    navigate("/cart");
   }
 
   useEffect(() => {

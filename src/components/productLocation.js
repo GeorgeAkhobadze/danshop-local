@@ -12,6 +12,24 @@ const ProductLocation = () => {
   const [moderatorCount, setModeratorCount] = useState(1);
   const [assistantCount, setAssistantCount] = useState(1);
   const [participantCount, setParticipantCount] = useState(1);
+  const [locationPrice, setLocationPrice] = useState(0);
+  const [moderatorPrice, setModeratorPrice] = useState(0);
+
+  useEffect(() => {
+    if (product?.workshop.workshopLocation !== "") {
+      setPage(2);
+      console.log(page);
+    }
+    // const updatedProduct = {
+    //   ...product,
+    //   workshop: {
+    //     ...product.workshop,
+    //     workshopLocation: "",
+    //     workshopLocationPrice: 0,
+    //   },
+    // };
+    // updateChangesLocal(updatedProduct);
+  }, []);
 
   const updateChangesLocal = (updatedProduct) => {
     const existingArray = JSON.parse(localStorage.getItem("products"));
@@ -26,12 +44,45 @@ const ProductLocation = () => {
   const [participantsSubmitted, setParticipantsSubmitted] = useState(false);
 
   const handleWorkshopChange = (field, value) => {
-    const updatedProduct = {
-      ...product,
-      workshop: { ...product.workshop, [field]: value },
-    };
-    updateChangesLocal(updatedProduct);
-    setPage(page + 1);
+    console.log(value == "At The Customer");
+    if (value === "At The Customer") {
+      const updatedProduct = {
+        ...product,
+        workshop: {
+          ...product.workshop,
+          [field]: value,
+          workshopLocationPrice: 500,
+        },
+      };
+      console.log(updatedProduct);
+      updateChangesLocal(updatedProduct);
+      setPage(page + 1);
+    } else if (value === "Externer Workshop Place") {
+      const updatedProduct = {
+        ...product,
+        workshop: {
+          ...product.workshop,
+          [field]: value,
+          workshopLocationPrice: 2200,
+        },
+      };
+      console.log(updatedProduct);
+      updateChangesLocal(updatedProduct);
+      setPage(page + 1);
+    } else {
+      const updatedProduct = {
+        ...product,
+
+        workshop: {
+          ...product.workshop,
+          [field]: value,
+          workshopLocationPrice: 0,
+        },
+      };
+      console.log(updatedProduct);
+      updateChangesLocal(updatedProduct);
+      setPage(page + 1);
+    }
   };
 
   const updateModerators = (value) => {
@@ -39,8 +90,10 @@ const ProductLocation = () => {
     console.log(value > 12);
     if (value > 12) {
       setModeratorCount(2);
+      setModeratorPrice(1500);
     } else if (value <= 12) {
       setModeratorCount(1);
+      setModeratorPrice(0);
     }
     if (value > 24) {
       setAssistantCount(2);
@@ -57,6 +110,7 @@ const ProductLocation = () => {
         assistants: assistantCount,
         moderators: moderatorCount,
         participants: participantCount,
+        moderatorPrice: moderatorPrice,
       },
     };
     updateChangesLocal(updatedProduct);
