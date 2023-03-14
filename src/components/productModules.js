@@ -9,6 +9,7 @@ const ProductModules = () => {
   const [product, setProduct] = useState(
     JSON.parse(localStorage.getItem("products"))[productId]
   );
+  const [totalPrice, setTotalPrice] = useState(0);
 
   const updateChangesLocal = (updatedProduct) => {
     const existingArray = JSON.parse(localStorage.getItem("products"));
@@ -22,574 +23,1103 @@ const ProductModules = () => {
   };
 
   useEffect(() => {
-    if (product.name === "MARKENENTWICKLUNG") {
-      const updatedObject = {
-        ...product,
-        modules: [
-          {
-            title: "Allgemeine Leistungen zur Vorbereitung",
-            module: [
-              { name: "Initiales Kick-off Meeting", checkbox: null },
-              {
-                name: "Sichtung Input Kunde & Schaffung einer Arbeitsgrundlage",
-                checkbox: null,
-              },
-              { name: "Erstellung Agenda", checkbox: null },
-              { name: "Raumbuchung & -vorbereitung", checkbox: null },
-              { name: "Materialvorbereitung", checkbox: null },
-              { name: "Anlegen Miro-Board", checkbox: null },
-            ],
-          },
-          {
-            title: "Audit",
-            module: [
-              { name: "Wettbewerbsanalyse", checkbox: null },
-              {
-                name: "Trend-und Benchmarkanalyse",
-                checkbox: null,
-              },
-              { name: "Zilgruppananalyse", checkbox: null },
-              { name: "Design Audit", checkbox: false, price: 200 },
-            ],
-          },
-          {
-            title: "Markenentwicklung",
-            module: [
-              { name: "Mission, Vision, Purpouse", checkbox: null },
-              { name: "Markenmodell", checkbox: null },
-              { name: "Markenkern", checkbox: null },
-              { name: "Markenwerte", checkbox: null },
-              { name: "Positionierung", checkbox: null },
-              { name: "Brand Story", checkbox: null },
-              { name: "Markenarchitektur", checkbox: false, price: 200 },
-              { name: "Produktportfolio", checkbox: false, price: 200 },
-              { name: "Impulsvortrag", checkbox: false, price: 200 },
-            ],
-          },
-          {
-            title: "Allgemeine Leistungen Nachbereitung/ Dokumentation",
-            module: [
-              {
-                name: "Aufbereitung & Verdichtung WS-Ergebnisse",
-                checkbox: null,
-              },
-              {
-                name: "Handlungsempfehlungen",
-                checkbox: null,
-              },
-              { name: "Fazit & Next Steps", checkbox: null },
-              {
-                name: "Gemeinsame Durchsprache der Ergebnisse via ViKo",
-                checkbox: null,
-              },
-              {
-                name: "1 Korrekturschleife / Einarbeitung Feedback",
-                checkbox: null,
-              },
-              { name: "Bereitstellung der Daten", checkbox: null },
-              { name: "WO werden die Daten bereitgestellt", checkbox: null },
-              {
-                name: "Medium --> Foto dokumentation / PP-Präsenation",
-                checkbox: null,
-              },
-            ],
-          },
-        ],
-      };
-      updateChangesLocal(updatedObject);
-      setProduct(updatedObject);
-      console.log("yes");
-    } else if (product.name == "NAMING") {
-      const updatedObject = {
-        ...product,
-        modules: [
-          {
-            title: "Allgemeine Leistungen zur Vorbereitung",
-            module: [
-              { name: "Initiales Kick-off Meeting", checkbox: null },
-              {
-                name: "Sichtung Input Kunde & Schaffung einer Arbeitsgrundlage",
-                checkbox: null,
-              },
-              { name: "Erstellung Agenda", checkbox: null },
-              { name: "Raumbuchung & -vorbereitung", checkbox: null },
-              { name: "Materialvorbereitung", checkbox: null },
-              { name: "Anlegen Miro-Board", checkbox: null },
-            ],
-          },
-          {
-            title: "Audit",
-            module: [
-              { name: "Marke & Positionierung", checkbox: null },
-              { name: "Zielgruppenanalyse", checkbox: null },
-            ],
-          },
-          {
-            title: "Naming (Erarbeitung)",
-            module: [
-              { name: "Suchfelder", checkbox: null },
-              { name: "Creative Session", checkbox: null },
-              { name: "Longlist / Shortlist / Favorites", checkbox: null },
-              {
-                name: "Abgleich Markenwerte, Brandfit & Bewertungsmatrix",
-                checkbox: null,
-              },
-              { name: "Domainprüfung / Verfügbarkeit", checkbox: null },
-              { name: "Korrekturschleife", checkbox: null },
-            ],
-          },
-          {
-            title: "Naming (Bewertung)",
-            module: [
-              {
-                name: "Abgleich Markenwerte, Brandfit & Bewertungsmatrix",
-                checkbox: null,
-              },
-              { name: "Alternative Szenarien", checkbox: null },
-              { name: "Design Routen", checkbox: false },
-              {
-                name: "Corporate Identity",
-                checkbox: false,
-              },
-              { name: "Rechtliche Prüfung", checkbox: false },
-            ],
-          },
-          {
-            title: "Allgemeine Leistungen Nachbereitung/ Dokumentation",
-            module: [
-              {
-                name: "Aufbereitung & Verdichtung WS-Ergebnisse",
-                checkbox: null,
-              },
-              {
-                name: "Handlungsempfehlungen",
-                checkbox: null,
-              },
-              { name: "Fazit & Next Steps", checkbox: null },
-              {
-                name: "Gemeinsame Durchsprache der Ergebnisse via ViKo",
-                checkbox: null,
-              },
-              {
-                name: "1 Korrekturschleife / Einarbeitung Feedback",
-                checkbox: null,
-              },
-              { name: "Bereitstellung der Daten", checkbox: null },
-              { name: "WO werden die Daten bereitgestellt", checkbox: null },
-              {
-                name: "Medium --> Foto dokumentation / PP-Präsenation",
-                checkbox: null,
-              },
-            ],
-          },
-        ],
-      };
-      updateChangesLocal(updatedObject);
-      setProduct(updatedObject);
-    } else if (product.name === "OMNICHANNEL_KONZEPT") {
-      const updatedObject = {
-        ...product,
-        modules: [
-          {
-            title: "Allgemeine Leistungen zur Vorbereitung",
-            module: [
-              { name: "Initiales Kick-off Meeting", checkbox: null },
-              {
-                name: "Sichtung Input Kunde & Schaffung einer Arbeitsgrundlage",
-                checkbox: null,
-              },
-              { name: "Erstellung Agenda", checkbox: null },
-              { name: "Raumbuchung & -vorbereitung", checkbox: null },
-              { name: "Materialvorbereitung", checkbox: null },
-              { name: "Anlegen Miro-Board", checkbox: null },
-            ],
-          },
-          {
-            title: "Audit",
-            module: [
-              { name: "Grundlagenermitlung (Quick Check)", checkbox: null },
-              { name: "Trend- und Benchmarkanalyse", checkbox: null },
-              { name: "Zielgruppenanalyse", checkbox: null },
-              { name: "Architectual Audit (Fotodoku)", checkbox: false },
-              { name: "Identifikation Handlungsfelder", checkbox: false },
-            ],
-          },
-          {
-            title: "Creation",
-            module: [
-              { name: "easd", checkbox: null },
-              { name: "Opportunity Mapping", checkbox: null },
-              {
-                name: "Persona & Bedürfnisse Nutzer & Serviceanalyse",
-                checkbox: null,
-              },
-              {
-                name: "Moodboard (digital)",
-                checkbox: null,
-              },
-              { name: "Identifikation von Schnittstellen", checkbox: null },
-              { name: "2 Design Routen (Moodbards/Skizze)", checkbox: null },
-              {
-                name: "Touchpoint Konzept (Digital / Hybrid / Analog)",
-                checkbox: null,
-              },
-              { name: "Retail Innovation Playbook", checkbox: null },
-              {
-                name: "Erstellung 3D Modell + 3D Visualisierungen",
-                checkbox: false,
-              },
-              { name: "Text", checkbox: false },
-              { name: "Brand Story", checkbox: false },
-              { name: "Impulsvortrag", checkbox: false },
-            ],
-          },
-          {
-            title: "Konzept",
-            module: [
-              {
-                name: "Erarbeitung einer Design Route (3-4 Visualisierung)",
-                checkbox: null,
-              },
-              { name: "Grundriss", checkbox: null },
-              { name: "Moodboard (analog)", checkbox: null },
-              {
-                name: "Zukaufmöbel",
-                checkbox: null,
-              },
-              { name: "Entwicklung Mittelraummöbel", checkbox: null },
-              { name: "Zusätzliche 3D Visualisierung", checkbox: false },
-              { name: "Walk-through Video (Enscape)", checkbox: false },
-              {
-                name: "Erstellung 2D Ansichten (Wandabwicklung| Fassade)",
-                checkbox: false,
-              },
-              {
-                name: "Koordination & Integration Fachplaner",
-                checkbox: false,
-              },
-              {
-                name: "Abstimmung mit Dienstleistern Hardware (Screen & Audio)",
-                checkbox: false,
-              },
-              {
-                name: "Decken- & Beleuchtungskonzept (gestalterisch)",
-                checkbox: false,
-              },
-              { name: "Kommunikationskonzept im Raum", checkbox: false },
-              { name: "Grobkostenschätzung", checkbox: false },
-            ],
-          },
-          {
-            title: "Allgemeine Leistungen Nachbereitung/ Dokumentation",
-            module: [
-              {
-                name: "Aufbereitung & Verdichtung WS-Ergebnisse",
-                checkbox: null,
-              },
-              {
-                name: "Handlungsempfehlungen",
-                checkbox: null,
-              },
-              { name: "Fazit & Next Steps", checkbox: null },
-              {
-                name: "Gemeinsame Durchsprache der Ergebnisse via ViKo",
-                checkbox: null,
-              },
-              {
-                name: "1 Korrekturschleife / Einarbeitung Feedback",
-                checkbox: null,
-              },
-              { name: "Bereitstellung der Daten", checkbox: null },
-              { name: "WO werden die Daten bereitgestellt", checkbox: null },
-              {
-                name: "Medium --> Foto dokumentation / PP-Präsenation",
-                checkbox: null,
-              },
-            ],
-          },
-        ],
-      };
-      updateChangesLocal(updatedObject);
-      setProduct(updatedObject);
-    } else if (product.name === "CORPORATE_DESIGN") {
-      const updatedObject = {
-        ...product,
-        modules: [
-          {
-            title: "Allgemeine Leistungen zur Vorbereitung",
-            module: [
-              { name: "Initiales Kick-off Meeting", checkbox: null },
-              {
-                name: "Sichtung Input Kunde & Schaffung einer Arbeitsgrundlage",
-                checkbox: null,
-              },
-              { name: "Erstellung Agenda", checkbox: null },
-              { name: "Raumbuchung & -vorbereitung", checkbox: null },
-              { name: "Materialvorbereitung", checkbox: null },
-              { name: "Anlegen Miro-Board", checkbox: null },
-            ],
-          },
-          {
-            title: "Audit",
-            module: [
-              { name: "Trend- und Benchmarkanalyse", checkbox: null },
-              { name: "Design Audit", checkbox: null },
-            ],
-          },
-          {
-            title: "Konzeot",
-            module: [
-              { name: "Creative Session", checkbox: null },
-              { name: "Visual Metaphors", checkbox: null },
-              {
-                name: "Abgleich Markenwerte & Brandfit",
-                checkbox: null,
-              },
-              {
-                name: "Moodboard (digital/analog): Bildsprache / Bildwelten",
-                checkbox: null,
-              },
-              { name: "3 Design Routen (Moodbards/Skizze)", checkbox: null },
-              {
-                name: "Ausarbeitung 1 Route CI Logo, Design elemente, Typo, Bildsprache, Anwendungen",
-                checkbox: null,
-              },
-              { name: "Überführung in Brand Book", checkbox: false },
-            ],
-          },
-          {
-            title: "Allgemeine Leistungen Nachbereitung/ Dokumentation",
-            module: [
-              {
-                name: "Aufbereitung & Verdichtung WS-Ergebnisse",
-                checkbox: null,
-              },
-              {
-                name: "Handlungsempfehlungen",
-                checkbox: null,
-              },
-              { name: "Fazit & Next Steps", checkbox: null },
-              {
-                name: "Gemeinsame Durchsprache der Ergebnisse via ViKo",
-                checkbox: null,
-              },
-              {
-                name: "1 Korrekturschleife / Einarbeitung Feedback",
-                checkbox: null,
-              },
-              { name: "Bereitstellung der Daten", checkbox: null },
-              { name: "WO werden die Daten bereitgestellt", checkbox: null },
-              {
-                name: "Medium --> Foto dokumentation / PP-Präsenation",
-                checkbox: null,
-              },
-            ],
-          },
-        ],
-      };
-      updateChangesLocal(updatedObject);
-      setProduct(updatedObject);
-    } else if (product.name === "EMPLOYER_BRANDING") {
-      const updatedObject = {
-        ...product,
-        modules: [
-          {
-            title: "Allgemeine Leistungen zur Vorbereitung",
-            module: [
-              { name: "Initiales Kick-off Meeting", checkbox: null },
-              {
-                name: "Sichtung Input Kunde & Schaffung einer Arbeitsgrundlage",
-                checkbox: null,
-              },
-              { name: "Erstellung Agenda", checkbox: null },
-              { name: "Raumbuchung & -vorbereitung", checkbox: null },
-              { name: "Materialvorbereitung", checkbox: null },
-              { name: "Anlegen Miro-Board", checkbox: null },
-            ],
-          },
-          {
-            title: "Audit",
-            module: [
-              { name: "Marke & Positionierung", checkbox: null },
-              { name: "Zielgruppenanalyse Employee Audit", checkbox: null },
-              { name: "Trend- und Benchmarkanalyse", checkbox: null },
-            ],
-          },
-          {
-            title: "Creation",
-            module: [
-              { name: "Interne Werte-Definition", checkbox: null },
-              { name: "Talent Journey", checkbox: null },
-              {
-                name: "Persona & Bedürfnisse",
-                checkbox: null,
-              },
-              { name: "Impulsvortrag", checkbox: false },
-              { name: "Purpose Vision & Mission Entwicklung", checkbox: false },
-            ],
-          },
-          {
-            title: "Konzept",
-            module: [
-              {
-                name: "Werte-Aktivierung Employee Branding Kampagne",
-                checkbox: null,
-              },
-              { name: "Hyrbid Employee Experience", checkbox: null },
-              {
-                name: "Organisations & Führungsverständnis",
-                checkbox: null,
-              },
-              { name: "New Work Space Konzept", checkbox: false },
-              { name: "Internal Brand Story", checkbox: false },
-            ],
-          },
-          {
-            title: "Allgemeine Leistungen Nachbereitung/ Dokumentation",
-            module: [
-              {
-                name: "Aufbereitung & Verdichtung WS-Ergebnisse",
-                checkbox: null,
-              },
-              {
-                name: "Handlungsempfehlungen",
-                checkbox: null,
-              },
-              { name: "Fazit & Next Steps", checkbox: null },
-              {
-                name: "Gemeinsame Durchsprache der Ergebnisse via ViKo",
-                checkbox: null,
-              },
-              {
-                name: "1 Korrekturschleife / Einarbeitung Feedback",
-                checkbox: null,
-              },
-              { name: "Bereitstellung der Daten", checkbox: null },
-              { name: "WO werden die Daten bereitgestellt", checkbox: null },
-              {
-                name: "Medium --> Foto dokumentation / PP-Präsenation",
-                checkbox: null,
-              },
-            ],
-          },
-        ],
-      };
-      updateChangesLocal(updatedObject);
-      setProduct(updatedObject);
-    } else if (product.name === "VISIONSENTWICKLUNG") {
-      const updatedObject = {
-        ...product,
-        modules: [
-          {
-            title: "Allgemeine Leistungen zur Vorbereitung",
-            module: [
-              { name: "Initiales Kick-off Meeting", checkbox: null },
-              {
-                name: "Sichtung Input Kunde & Schaffung einer Arbeitsgrundlage",
-                checkbox: null,
-              },
-              { name: "Erstellung Agenda", checkbox: null },
-              { name: "Raumbuchung & -vorbereitung", checkbox: null },
-              { name: "Materialvorbereitung", checkbox: null },
-              { name: "Anlegen Miro-Board", checkbox: null },
-            ],
-          },
-          {
-            title: "Audit",
-            module: [
-              { name: "Erste Standortanalyse", checkbox: null },
-              { name: "Wettbewerbsanalyse", checkbox: null },
-              { name: "Trend- und Benchmarkanalyse", checkbox: null },
-              { name: "Architectual Audit", checkbox: false },
-            ],
-          },
-          {
-            title: "Visionsentwicklung",
-            module: [
-              {
-                name: "Positionierung & Differenzierung vom Wettbewerb",
-                checkbox: null,
-              },
-              {
-                name: "Visionsentwicklung & übergreifende Projektvision",
-                checkbox: null,
-              },
-              {
-                name: "Entwicklung einer Storyline",
-                checkbox: null,
-              },
-              { name: "Marken- & Projektleitbild", checkbox: null },
-            ],
-          },
-          {
-            title: "Ausarbeitung",
-            module: [
-              {
-                name: "Erstellung eines Pitch Deck CI: dp oder Kunden CI",
-                checkbox: null,
-              },
-              {
-                name: "Ausarbeitung & Ausgestaltung der Storyline & bebilderte Konzepttexte",
-                checkbox: null,
-              },
-              {
-                name: "Schulterblick zur Abstimmung finales Design & Text",
-                checkbox: null,
-              },
-              { name: "Übertragung in Mini CI", checkbox: false },
-            ],
-          },
-          {
-            title: "Allgemeine Leistungen Nachbereitung/ Dokumentation",
-            module: [
-              {
-                name: "Aufbereitung & Verdichtung WS-Ergebnisse",
-                checkbox: null,
-              },
-              {
-                name: "Handlungsempfehlungen",
-                checkbox: null,
-              },
-              { name: "Fazit & Next Steps", checkbox: null },
-              {
-                name: "Gemeinsame Durchsprache der Ergebnisse via ViKo",
-                checkbox: null,
-              },
-              {
-                name: "1 Korrekturschleife / Einarbeitung Feedback",
-                checkbox: null,
-              },
-              { name: "Bereitstellung der Daten", checkbox: null },
-              { name: "WO werden die Daten bereitgestellt", checkbox: null },
-              {
-                name: "Medium --> Foto dokumentation / PP-Präsenation",
-                checkbox: null,
-              },
-            ],
-          },
-        ],
-      };
-      updateChangesLocal(updatedObject);
-      setProduct(updatedObject);
-    } else {
-      return;
+    console.log(product.modules.length, "GELAGELA");
+    if (product?.modules.length === 0 || product?.modules.length === 1) {
+      if (product.name === "MARKENENTWICKLUNG") {
+        const updatedObject = {
+          ...product,
+          modules: [
+            {
+              title: "Allgemeine Leistungen zur Vorbereitung",
+              module: [
+                {
+                  name: "Initiales Kick-off Meeting",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Sichtung Input Kunde & Schaffung einer Arbeitsgrundlage",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Erstellung Agenda",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Raumbuchung & -vorbereitung",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Materialvorbereitung",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Anlegen Miro-Board",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+              ],
+            },
+            {
+              title: "Audit",
+              module: [
+                {
+                  name: "Wettbewerbsanalyse",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Trend-und Benchmarkanalyse",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Zilgruppananalyse",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Design Audit",
+                  hasCheckbox: true,
+                  checkbox: null,
+                  price: 200,
+                },
+              ],
+            },
+            {
+              title: "Markenentwicklung",
+              module: [
+                {
+                  name: "Mission, Vision, Purpouse",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                { name: "Markenmodell", hasCheckbox: false, checkbox: null },
+                { name: "Markenkern", hasCheckbox: false, checkbox: null },
+                { name: "Markenwerte", hasCheckbox: false, checkbox: null },
+                { name: "Positionierung", hasCheckbox: false, checkbox: null },
+                { name: "Brand Story", hasCheckbox: false, checkbox: null },
+                {
+                  name: "Markenarchitektur",
+                  hasCheckbox: true,
+                  checkbox: null,
+                  price: 200,
+                },
+                {
+                  name: "Produktportfolio",
+                  hasCheckbox: true,
+                  checkbox: null,
+                  price: 200,
+                },
+                {
+                  name: "Impulsvortrag",
+                  hasCheckbox: true,
+                  checkbox: null,
+                  price: 200,
+                },
+              ],
+            },
+            {
+              title: "Allgemeine Leistungen Nachbereitung/ Dokumentation",
+              module: [
+                {
+                  name: "Aufbereitung & Verdichtung WS-Ergebnisse",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Handlungsempfehlungen",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Fazit & Next Steps",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Gemeinsame Durchsprache der Ergebnisse via ViKo",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "1 Korrekturschleife / Einarbeitung Feedback",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Bereitstellung der Daten",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "WO werden die Daten bereitgestellt",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Medium --> Foto dokumentation / PP-Präsenation",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+              ],
+            },
+          ],
+        };
+        updateChangesLocal(updatedObject);
+        setProduct(updatedObject);
+      } else if (product.name == "NAMING") {
+        const updatedObject = {
+          ...product,
+          modules: [
+            {
+              title: "Allgemeine Leistungen zur Vorbereitung",
+              module: [
+                {
+                  name: "Initiales Kick-off Meeting",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Sichtung Input Kunde & Schaffung einer Arbeitsgrundlage",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Erstellung Agenda",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Raumbuchung & -vorbereitung",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Materialvorbereitung",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Anlegen Miro-Board",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+              ],
+            },
+            {
+              title: "Audit",
+              module: [
+                {
+                  name: "Marke & Positionierung",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Zielgruppenanalyse",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+              ],
+            },
+            {
+              title: "Naming (Erarbeitung)",
+              module: [
+                { name: "Suchfelder", hasCheckbox: false, checkbox: null },
+                {
+                  name: "Creative Session",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Longlist / Shortlist / Favorites",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Abgleich Markenwerte, Brandfit & Bewertungsmatrix",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Domainprüfung / Verfügbarkeit",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Korrekturschleife",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+              ],
+            },
+            {
+              title: "Naming (Bewertung)",
+              module: [
+                {
+                  name: "Abgleich Markenwerte, Brandfit & Bewertungsmatrix",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Alternative Szenarien",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                { name: "Design Routen", hasCheckbox: false, checkbox: false },
+                {
+                  name: "Corporate Identity",
+                  hasCheckbox: true,
+                  checkbox: false,
+                  price: 200,
+                },
+                {
+                  name: "Rechtliche Prüfung",
+                  hasCheckbox: true,
+                  checkbox: false,
+                  price: 200,
+                },
+              ],
+            },
+            {
+              title: "Allgemeine Leistungen Nachbereitung/ Dokumentation",
+              module: [
+                {
+                  name: "Aufbereitung & Verdichtung WS-Ergebnisse",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Handlungsempfehlungen",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Fazit & Next Steps",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Gemeinsame Durchsprache der Ergebnisse via ViKo",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "1 Korrekturschleife / Einarbeitung Feedback",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Bereitstellung der Daten",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "WO werden die Daten bereitgestellt",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Medium --> Foto dokumentation / PP-Präsenation",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+              ],
+            },
+          ],
+        };
+        updateChangesLocal(updatedObject);
+        setProduct(updatedObject);
+      } else if (product.name === "OMNICHANNEL_KONZEPT") {
+        const updatedObject = {
+          ...product,
+          modules: [
+            {
+              title: "Allgemeine Leistungen zur Vorbereitung",
+              module: [
+                {
+                  name: "Initiales Kick-off Meeting",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Sichtung Input Kunde & Schaffung einer Arbeitsgrundlage",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Erstellung Agenda",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Raumbuchung & -vorbereitung",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Materialvorbereitung",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Anlegen Miro-Board",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+              ],
+            },
+            {
+              title: "Audit",
+              module: [
+                {
+                  name: "Grundlagenermitlung (Quick Check)",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Trend- und Benchmarkanalyse",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Zielgruppenanalyse",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Architectual Audit (Fotodoku)",
+                  hasCheckbox: true,
+                  checkbox: false,
+                  price: 200,
+                },
+                {
+                  name: "Identifikation Handlungsfelder",
+                  hasCheckbox: true,
+                  checkbox: false,
+                  price: 200,
+                },
+              ],
+            },
+            {
+              title: "Creation",
+              module: [
+                { name: "easd", hasCheckbox: false, checkbox: null },
+                {
+                  name: "Opportunity Mapping",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Persona & Bedürfnisse Nutzer & Serviceanalyse",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Moodboard (digital)",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Identifikation von Schnittstellen",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "2 Design Routen (Moodbards/Skizze)",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Touchpoint Konzept (Digital / Hybrid / Analog)",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Retail Innovation Playbook",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Erstellung 3D Modell + 3D Visualisierungen",
+                  hasCheckbox: true,
+                  price: 200,
+                  checkbox: false,
+                },
+                {
+                  name: "Text",
+                  hasCheckbox: true,
+                  price: 200,
+                  checkbox: false,
+                },
+                {
+                  name: "Brand Story",
+                  hasCheckbox: true,
+                  price: 200,
+                  checkbox: false,
+                },
+                {
+                  name: "Impulsvortrag",
+                  hasCheckbox: true,
+                  price: 200,
+                  checkbox: false,
+                },
+              ],
+            },
+            {
+              title: "Konzept",
+              module: [
+                {
+                  name: "Erarbeitung einer Design Route (3-4 Visualisierung)",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                { name: "Grundriss", hasCheckbox: false, checkbox: null },
+                {
+                  name: "Moodboard (analog)",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Zukaufmöbel",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Entwicklung Mittelraummöbel",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Zusätzliche 3D Visualisierung",
+                  hasCheckbox: true,
+                  checkbox: false,
+                  price: 200,
+                },
+                {
+                  name: "Walk-through Video (Enscape)",
+                  hasCheckbox: true,
+                  checkbox: false,
+                  price: 200,
+                },
+                {
+                  name: "Erstellung 2D Ansichten (Wandabwicklung| Fassade)",
+                  hasCheckbox: true,
+                  checkbox: false,
+                  price: 200,
+                },
+                {
+                  name: "Koordination & Integration Fachplaner",
+                  hasCheckbox: true,
+                  checkbox: false,
+                  price: 200,
+                },
+                {
+                  name: "Abstimmung mit Dienstleistern Hardware (Screen & Audio)",
+                  hasCheckbox: true,
+                  checkbox: false,
+                  price: 200,
+                },
+                {
+                  name: "Decken- & Beleuchtungskonzept (gestalterisch)",
+                  hasCheckbox: true,
+                  checkbox: false,
+                  price: 200,
+                },
+                {
+                  name: "Kommunikationskonzept im Raum",
+                  hasCheckbox: true,
+                  checkbox: false,
+                  price: 200,
+                },
+                {
+                  name: "Grobkostenschätzung",
+                  hasCheckbox: true,
+                  checkbox: false,
+                  price: 200,
+                },
+              ],
+            },
+            {
+              title: "Allgemeine Leistungen Nachbereitung/ Dokumentation",
+              module: [
+                {
+                  name: "Aufbereitung & Verdichtung WS-Ergebnisse",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Handlungsempfehlungen",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Fazit & Next Steps",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Gemeinsame Durchsprache der Ergebnisse via ViKo",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "1 Korrekturschleife / Einarbeitung Feedback",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Bereitstellung der Daten",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "WO werden die Daten bereitgestellt",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Medium --> Foto dokumentation / PP-Präsenation",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+              ],
+            },
+          ],
+        };
+        updateChangesLocal(updatedObject);
+        setProduct(updatedObject);
+      } else if (product.name === "CORPORATE_DESIGN") {
+        const updatedObject = {
+          ...product,
+          modules: [
+            {
+              title: "Allgemeine Leistungen zur Vorbereitung",
+              module: [
+                {
+                  name: "Initiales Kick-off Meeting",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Sichtung Input Kunde & Schaffung einer Arbeitsgrundlage",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Erstellung Agenda",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Raumbuchung & -vorbereitung",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Materialvorbereitung",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Anlegen Miro-Board",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+              ],
+            },
+            {
+              title: "Audit",
+              module: [
+                {
+                  name: "Trend- und Benchmarkanalyse",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                { name: "Design Audit", hasCheckbox: false, checkbox: null },
+              ],
+            },
+            {
+              title: "Konzeot",
+              module: [
+                {
+                  name: "Creative Session",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Visual Metaphors",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Abgleich Markenwerte & Brandfit",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Moodboard (digital/analog): Bildsprache / Bildwelten",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "3 Design Routen (Moodbards/Skizze)",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Ausarbeitung 1 Route CI Logo, Design elemente, Typo, Bildsprache, Anwendungen",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Überführung in Brand Book",
+                  hasCheckbox: true,
+                  checkbox: false,
+                  price: 200,
+                },
+              ],
+            },
+            {
+              title: "Allgemeine Leistungen Nachbereitung/ Dokumentation",
+              module: [
+                {
+                  name: "Aufbereitung & Verdichtung WS-Ergebnisse",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Handlungsempfehlungen",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Fazit & Next Steps",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Gemeinsame Durchsprache der Ergebnisse via ViKo",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "1 Korrekturschleife / Einarbeitung Feedback",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Bereitstellung der Daten",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "WO werden die Daten bereitgestellt",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Medium --> Foto dokumentation / PP-Präsenation",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+              ],
+            },
+          ],
+        };
+        updateChangesLocal(updatedObject);
+        setProduct(updatedObject);
+      } else if (product.name === "EMPLOYER_BRANDING") {
+        const updatedObject = {
+          ...product,
+          modules: [
+            {
+              title: "Allgemeine Leistungen zur Vorbereitung",
+              module: [
+                {
+                  name: "Initiales Kick-off Meeting",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Sichtung Input Kunde & Schaffung einer Arbeitsgrundlage",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Erstellung Agenda",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Raumbuchung & -vorbereitung",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Materialvorbereitung",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Anlegen Miro-Board",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+              ],
+            },
+            {
+              title: "Audit",
+              module: [
+                {
+                  name: "Marke & Positionierung",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Zielgruppenanalyse Employee Audit",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Trend- und Benchmarkanalyse",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+              ],
+            },
+            {
+              title: "Creation",
+              module: [
+                {
+                  name: "Interne Werte-Definition",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                { name: "Talent Journey", hasCheckbox: false, checkbox: null },
+                {
+                  name: "Persona & Bedürfnisse",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Impulsvortrag",
+                  hasCheckbox: true,
+                  price: 200,
+                  checkbox: false,
+                },
+                {
+                  name: "Purpose Vision & Mission Entwicklung",
+                  hasCheckbox: true,
+                  price: 200,
+                  checkbox: false,
+                },
+              ],
+            },
+            {
+              title: "Konzept",
+              module: [
+                {
+                  name: "Werte-Aktivierung Employee Branding Kampagne",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Hyrbid Employee Experience",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Organisations & Führungsverständnis",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "New Work Space Konzept",
+                  hasCheckbox: true,
+                  price: 200,
+                  checkbox: false,
+                },
+                {
+                  name: "Internal Brand Story",
+                  hasCheckbox: true,
+                  price: 200,
+                  checkbox: false,
+                },
+              ],
+            },
+            {
+              title: "Allgemeine Leistungen Nachbereitung/ Dokumentation",
+              module: [
+                {
+                  name: "Aufbereitung & Verdichtung WS-Ergebnisse",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Handlungsempfehlungen",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Fazit & Next Steps",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Gemeinsame Durchsprache der Ergebnisse via ViKo",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "1 Korrekturschleife / Einarbeitung Feedback",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Bereitstellung der Daten",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "WO werden die Daten bereitgestellt",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Medium --> Foto dokumentation / PP-Präsenation",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+              ],
+            },
+          ],
+        };
+        updateChangesLocal(updatedObject);
+        setProduct(updatedObject);
+      } else if (product.name === "VISIONSENTWICKLUNG") {
+        const updatedObject = {
+          ...product,
+          modules: [
+            {
+              title: "Allgemeine Leistungen zur Vorbereitung",
+              module: [
+                {
+                  name: "Initiales Kick-off Meeting",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Sichtung Input Kunde & Schaffung einer Arbeitsgrundlage",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Erstellung Agenda",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Raumbuchung & -vorbereitung",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Materialvorbereitung",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Anlegen Miro-Board",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+              ],
+            },
+            {
+              title: "Audit",
+              module: [
+                {
+                  name: "Erste Standortanalyse",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Wettbewerbsanalyse",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Trend- und Benchmarkanalyse",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Architectual Audit",
+                  hasCheckbox: true,
+                  price: 200,
+                  checkbox: false,
+                },
+              ],
+            },
+            {
+              title: "Visionsentwicklung",
+              module: [
+                {
+                  name: "Positionierung & Differenzierung vom Wettbewerb",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Visionsentwicklung & übergreifende Projektvision",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Entwicklung einer Storyline",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Marken- & Projektleitbild",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+              ],
+            },
+            {
+              title: "Ausarbeitung",
+              module: [
+                {
+                  name: "Erstellung eines Pitch Deck CI: dp oder Kunden CI",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Ausarbeitung & Ausgestaltung der Storyline & bebilderte Konzepttexte",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Schulterblick zur Abstimmung finales Design & Text",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Übertragung in Mini CI",
+                  hasCheckbox: true,
+                  price: 200,
+                  checkbox: false,
+                },
+              ],
+            },
+            {
+              title: "Allgemeine Leistungen Nachbereitung/ Dokumentation",
+              module: [
+                {
+                  name: "Aufbereitung & Verdichtung WS-Ergebnisse",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Handlungsempfehlungen",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Fazit & Next Steps",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Gemeinsame Durchsprache der Ergebnisse via ViKo",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "1 Korrekturschleife / Einarbeitung Feedback",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Bereitstellung der Daten",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "WO werden die Daten bereitgestellt",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+                {
+                  name: "Medium --> Foto dokumentation / PP-Präsenation",
+                  hasCheckbox: false,
+                  checkbox: null,
+                },
+              ],
+            },
+          ],
+        };
+        updateChangesLocal(updatedObject);
+        setProduct(updatedObject);
+      } else {
+        return;
+      }
     }
   }, []);
 
   const handleCheckbox = (e, index, moduleTitle, elIndex) => {
-    const updatedObject = product.modules.map((el) => {
-      const updatedModule = el?.module.map((object) => {
-        if (object.name == e.target.name) {
-          return { name: object.name, checbox: e.target.checked };
-        } else {
-          return object;
+    const updatedModules = product?.modules.map((el, i) => {
+      if (i !== elIndex) {
+        return el;
+      }
+      const updatedModule = el?.module?.map((object) => {
+        if (object.name === e.target.name) {
+          return { ...object, checkbox: e.target.checked };
         }
         return object;
       });
-      return updatedModule[elIndex];
+      return { ...el, module: updatedModule };
     });
+    updateChangesLocal({ ...product, modules: updatedModules });
+    setProduct({ ...product, modules: updatedModules });
   };
 
+  const [modulesPrice, setModulesPrice] = useState();
+  useEffect(() => {
+    console.log("THIS IS ME PRODUCTING");
+    let modulesPrice = 0;
+    console.log(
+      product?.priceAmount,
+      product?.workshop.workshopLocationPrice,
+      product?.workshop.moderatorPrice
+    );
+    product?.modules?.map((module) => {
+      module?.module?.map((innerModule) => {
+        if (innerModule?.checkbox == true) {
+          modulesPrice += innerModule?.price;
+        }
+      });
+    });
+    setModulesPrice(
+      modulesPrice +
+        product?.priceAmount +
+        product?.workshop.workshopLocationPrice +
+        product?.workshop.moderatorPrice
+    );
+    updateChangesLocal({
+      ...product,
+      priceAmount:
+        modulesPrice +
+        product?.priceAmount +
+        product?.workshop.workshopLocationPrice +
+        product?.workshop.moderatorPrice,
+    });
+  }, [product]);
   return (
     <div className="module-wrapper">
       <div className="product-modules-hero">
@@ -606,7 +1136,7 @@ const ProductModules = () => {
               <div className="product-module-title">{el.title}</div>
               <div className="module-list-container">
                 {el?.module?.map((module, index) => {
-                  if (module.checkbox !== null) {
+                  if (module.hasCheckbox == true) {
                     return (
                       <label
                         className="module-checkbox-container"
@@ -618,6 +1148,7 @@ const ProductModules = () => {
                           onClick={(e) =>
                             handleCheckbox(e, index, el.title, elIndex)
                           }
+                          checked={module.checkbox}
                         />
                         {module.name}
                       </label>
@@ -637,7 +1168,7 @@ const ProductModules = () => {
         })}
         <div className="totalamount-container">
           <p>
-            <span>TOTAL:</span> 5000EUR
+            <span>TOTAL:</span> {modulesPrice}€
           </p>
         </div>
         <div className="buttons-container">
