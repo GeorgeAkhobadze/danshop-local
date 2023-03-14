@@ -56,6 +56,15 @@ const ProductType = () => {
   }, [handleWorkshopChange]);
 
   const handleWorkshopButton = (value) => {
+    const updatedObject = {
+      ...product,
+      workshop: {
+        ...product.workshop,
+        moderatorPrice: 0,
+        workshopLocationPrice: 0,
+      },
+    };
+    updateChangesLocal(updatedObject);
     navigate(`/${myObject.name}/workshop/${myObject.id}/modules`);
   };
 
