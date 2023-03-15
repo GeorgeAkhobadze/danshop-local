@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router";
 import beidanImg from "../assets/beidan-img.svg";
 import beimkundenImg from "../assets/beimkunden-img.svg";
 import externerImg from "../assets/externer-img.svg";
+import Header from "./header/header";
 
 const ProductLocation = () => {
   const { productId } = useParams();
@@ -17,8 +18,7 @@ const ProductLocation = () => {
 
   useEffect(() => {
     if (product?.workshop.workshopLocation !== "") {
-      setPage(2);
-      console.log(page);
+      setPage(1);
     }
     // const updatedProduct = {
     //   ...product,
@@ -132,6 +132,7 @@ const ProductLocation = () => {
   if (page == 1) {
     return (
       <>
+        <Header />
         <div className="products-section-wrapper products-section-wrapper--top">
           <h3>WO SOLL DER WORKSHOP STATTFINDEN?</h3>
           <div className="products-container product-container-top">
@@ -169,6 +170,7 @@ const ProductLocation = () => {
   } else if (page == 2) {
     return (
       <>
+        <Header />
         <div className="products-section-wrapper products-section-wrapper--top products-section-wrapper--location">
           <h3>WIE VIELE TEILNEHMENDEN HAST DU?</h3>
           <input

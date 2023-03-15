@@ -14,13 +14,14 @@ import CompanyList from "./components/companyList";
 import ProductCart from "./components/productCart";
 import ProductCatering from "./components/productCatering";
 import ProductOverview from "./components/productOverview";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   let { userId } = useParams();
 
   return (
     <div className="app">
-      <Header />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/company_list" element={<CompanyList />} />

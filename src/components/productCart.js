@@ -2,10 +2,12 @@ import "./productModules.css";
 import "./productCart.css";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
+import Header from "./header/header";
 const ProductCart = () => {
   const productList = JSON.parse(localStorage.getItem("products"));
   const [totalPrice, setTotalPrice] = useState(0);
   const [updateList, setUpdateList] = useState(false);
+  const [cartUpdated, setCartUpdated] = useState(false);
   const navigate = useNavigate();
   function removeProductById(id) {
     const index = productList.findIndex((product) => product.id === id);
@@ -29,6 +31,7 @@ const ProductCart = () => {
 
   return (
     <>
+      <Header updated={updateList} />
       <div className="product-modules-hero">
         <div className="product-modules-hero--blur"></div>
         <h3>DEIN WARENKORB</h3>

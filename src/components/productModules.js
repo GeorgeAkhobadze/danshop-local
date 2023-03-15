@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
+import Header from "./header/header";
 import ProductCreate from "./productCreate";
 import "./productModules.css";
 
@@ -1121,67 +1122,72 @@ const ProductModules = () => {
     });
   }, [product]);
   return (
-    <div className="module-wrapper">
-      <div className="product-modules-hero">
-        <div className="product-modules-hero--blur"></div>
-        <h3>
-          WELCHE MODULE MÖCHTEST DU <br />
-          AUSWÄHLEN?
-        </h3>
-      </div>
-      <div className="product-modules">
-        {product?.modules?.map((el, elIndex) => {
-          return (
-            <div className="product-module-container" key={el.title}>
-              <div className="product-module-title">{el.title}</div>
-              <div className="module-list-container">
-                {el?.module?.map((module, index) => {
-                  if (module.hasCheckbox == true) {
-                    return (
-                      <label
-                        className="module-checkbox-container"
-                        key={module.name}
-                      >
-                        <input
-                          type="checkbox"
-                          name={module.name}
-                          onClick={(e) =>
-                            handleCheckbox(e, index, el.title, elIndex)
-                          }
-                          checked={module.checkbox}
-                        />
-                        {module.name}
-                      </label>
-                    );
-                  } else {
-                    return (
-                      <div className="module-container">
-                        <div className="module-list-bullet" />
-                        <p key={module.name}>{module.name}</p>
-                      </div>
-                    );
-                  }
-                })}
+    <>
+      <Header />
+      <div className="module-wrapper">
+        <div className="product-modules-hero">
+          <div className="product-modules-hero--blur"></div>
+          <h3>
+            WELCHE MODULE MÖCHTEST DU <br />
+            AUSWÄHLEN?
+          </h3>
+        </div>
+        <div className="product-modules">
+          {product?.modules?.map((el, elIndex) => {
+            return (
+              <div className="product-module-container" key={el.title}>
+                <div className="product-module-title">{el.title}</div>
+                <div className="module-list-container">
+                  {el?.module?.map((module, index) => {
+                    if (module.hasCheckbox == true) {
+                      return (
+                        <label
+                          className="module-checkbox-container"
+                          key={module.name}
+                        >
+                          <input
+                            type="checkbox"
+                            name={module.name}
+                            onClick={(e) =>
+                              handleCheckbox(e, index, el.title, elIndex)
+                            }
+                            checked={module.checkbox}
+                          />
+                          {module.name}
+                        </label>
+                      );
+                    } else {
+                      return (
+                        <div className="module-container">
+                          <div className="module-list-bullet" />
+                          <p key={module.name}>{module.name}</p>
+                        </div>
+                      );
+                    }
+                  })}
+                </div>
               </div>
-            </div>
-          );
-        })}
-        <div className="totalamount-container">
-          <p>
-            <span>TOTAL:</span> {modulesPrice}€
-          </p>
-        </div>
-        <div className="buttons-container">
-          <button className="button-back">ZURÜCK</button>
-          <button
-            className="button-next"
-            onClick={() => navigate(`/${productId}/overview`)}
-          >
-            WEITER
-          </button>
-        </div>
-      </div>{" "}
-    </div>
+            );
+          })}
+          <div className="totalamount-container">
+            <p>
+              <span>TOTAL:</span> {modulesPrice}€
+            </p>
+          </div>
+          <div className="buttons-container">
+            <button className="button-back" onClick={() => navigate(-1)}>
+              ZURÜCK
+            </button>
+            <button
+              className="button-next"
+              onClick={() => navigate(`/${productId}/overview`)}
+            >
+              WEITER
+            </button>
+          </div>
+        </div>{" "}
+      </div>
+    </>
   );
 };
 

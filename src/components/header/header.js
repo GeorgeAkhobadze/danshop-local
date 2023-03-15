@@ -4,7 +4,7 @@ import logoBlack from "../../assets/logo-black.svg";
 import cartIcon from "../../assets/cart-icon.svg";
 import "./header.css";
 import { useEffect, useState } from "react";
-const Header = () => {
+const Header = (updated) => {
   const location = useLocation();
   const navigate = useNavigate();
   const products = JSON.parse(localStorage.getItem("products"));
@@ -19,7 +19,7 @@ const Header = () => {
       }
     });
     setProductCount(count);
-  }, []);
+  }, [updated]);
 
   const handleStorageChange = (event) => {
     console.log("woohoo");

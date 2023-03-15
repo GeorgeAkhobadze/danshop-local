@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import modalCloseBtn from "../assets/modal-close-btn.svg";
+import Header from "./header/header";
 import "./productOverview.css";
 const ProductOverview = () => {
   const { productId } = useParams();
@@ -36,6 +37,7 @@ const ProductOverview = () => {
   };
   return (
     <>
+      <Header />
       {modalOpen && (
         <div className="modal-container">
           <div className="modal-background" />
@@ -123,13 +125,17 @@ const ProductOverview = () => {
             </div>
           </div>
         )}
-
-        <button
-          className="button-next button-next-overview"
-          onClick={() => setModalOpen(true)}
-        >
-          WEITER
-        </button>
+        <div className="buttons-container">
+          <button className="button-back" onClick={() => navigate(-1)}>
+            ZURÜCK
+          </button>
+          <button
+            className="button-next button-next-overview"
+            onClick={() => setModalOpen(true)}
+          >
+            zum Warenkorb hinzufügen
+          </button>
+        </div>
       </div>
     </>
   );

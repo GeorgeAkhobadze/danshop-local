@@ -5,6 +5,7 @@ import digitalImg from "../assets/digital-img.svg";
 import analogImg from "../assets/analog-img.svg";
 import hybridImg from "../assets/hybrid-img.svg";
 import "./productType.css";
+import Header from "./header/header";
 let products = JSON.parse(localStorage.getItem("products"));
 
 const ProductType = () => {
@@ -35,24 +36,24 @@ const ProductType = () => {
     };
     updateChangesLocal(updatedProduct);
     setMyObject(updatedProduct);
+    if (updatedProduct?.workshop.workshopType == "Analog") {
+      console.log("why am i not moved");
+      navigate(
+        `/${updatedProduct?.name}/${updatedProduct?.workshop.workshopType}/${updatedProduct?.id}/location`
+      );
+    }
     console.log(myObject);
-    // setFunctionRan(true);
   };
 
   useEffect(() => {
     // const myObject = JSON.parse(localStorage.getItem("products"))[productId];
-    console.log(myObject?.workshop.workshopType);
-    if (myObject?.workshop.workshopType == "Analog") {
-      navigate(
-        `/${myObject?.name}/${myObject?.workshop.workshopType}/${myObject?.id}/location`
-      );
-    }
     if (
       myObject?.name === "MARKENENTWICKLUNG" ||
       myObject?.name === "VISIONSENTWICKLUNG"
     ) {
       setPage(2);
     }
+    console.log(myObject?.workshop.workshopType);
   }, [handleWorkshopChange]);
 
   const handleWorkshopButton = (value) => {
@@ -70,6 +71,7 @@ const ProductType = () => {
 
   return (
     <>
+      <Header />
       {page === 1 && (
         <div className="workshop-question-container">
           <p className="workshop-question-title">
