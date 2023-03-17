@@ -195,17 +195,13 @@ const GenerateInvoice = () => {
           ></textarea>
         </div>
 
-        <div className="default-text-container">
-          <p className="default-text-title">Ziel des Auftrags:</p>
-          <textarea className="default-text-input" type="text"></textarea>
-        </div>
         <div className="pm-manager-inputs">
           <input
             type="text"
             className="danmaker-input pm-input"
             value={data.pmName}
             onChange={handleChange}
-            name="PmName"
+            name="pmName"
             placeholder="Project Manager"
           ></input>
           <select
