@@ -2,6 +2,8 @@ import "./productModules.css";
 import "./productCart.css";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
+import "./generateInvoice.css";
+
 import Header from "./header/header";
 const ProductCart = () => {
   const productList = JSON.parse(localStorage.getItem("products"));
@@ -80,7 +82,12 @@ const ProductCart = () => {
       <div className="cart-price-container">
         TOTAL<span>: {totalPrice}EUR</span>
       </div>
-      <button className="generate-invoice-btn">GENERATE INVOICE</button>
+      <button
+        className="generate-invoice-btn"
+        onClick={() => navigate("/generate-invoice")}
+      >
+        GENERATE INVOICE
+      </button>
     </>
   );
 };

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import modalCloseBtn from "../assets/modal-close-btn.svg";
+
 import Header from "./header/header";
 import "./productOverview.css";
 const ProductOverview = () => {

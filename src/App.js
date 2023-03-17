@@ -15,6 +15,7 @@ import ProductCart from "./components/productCart";
 import ProductCatering from "./components/productCatering";
 import ProductOverview from "./components/productOverview";
 import ScrollToTop from "./components/ScrollToTop";
+import GenerateInvoice from "./components/generateInvoice";
 
 function App() {
   let { userId } = useParams();
@@ -45,6 +46,7 @@ function App() {
         />
         <Route path="/:productId?/overview" element={<ProductOverview />} />
         <Route path="/cart" element={<ProductCart />} />
+        <Route path="/generate-invoice" element={<GenerateInvoice />} />
       </Routes>
     </div>
   );
