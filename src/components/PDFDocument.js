@@ -527,8 +527,8 @@ const PDFDocument = ({ data }) => (
             <Text style={styles.defaultText}>Geschäftsführer</Text>
           </View>
           <View style={[styles.signatureSection, styles.signatureSectionRight]}>
-            <Text style={styles.defaultText}>Nico Tanfal</Text>
-            <Text style={styles.defaultText}>Project Manager</Text>
+            <Text style={styles.defaultText}>{data?.pmName}</Text>
+            <Text style={styles.defaultText}>{data?.pmManager}</Text>
           </View>
         </View>
 

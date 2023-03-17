@@ -67,6 +67,12 @@
   width: 100%;
 }
 
+.pm-manager-inputs {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
 .default-text-title {
   font-size: 16px;
   color: black;
@@ -94,6 +100,10 @@
   margin: 0 auto;
   min-height: auto;
   width: 100%;
+}
+
+.pm-input {
+  max-width: 250px;
 }
 
 .generate-pdf-btn {

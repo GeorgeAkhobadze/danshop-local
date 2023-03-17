@@ -9,7 +9,7 @@ const GenerateInvoice = () => {
     companyAddress: "",
     ansprechspartner: "",
     clientAddress: "",
-    zipAndCity: "zippin",
+    zipAndCity: "",
     angebot: "",
     country: "",
     ortDate: "",
@@ -19,6 +19,8 @@ const GenerateInvoice = () => {
     danMaker: "",
     totalPrice: 0,
     totalPriceFee: 0,
+    pmName: "",
+    pmManager: "Projektmeneger",
   });
 
   useEffect(() => {
@@ -39,6 +41,7 @@ const GenerateInvoice = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    console.log(value);
     setData((prevState) => ({
       ...prevState,
       [name]: value,
@@ -195,6 +198,24 @@ const GenerateInvoice = () => {
         <div className="default-text-container">
           <p className="default-text-title">Ziel des Auftrags:</p>
           <textarea className="default-text-input" type="text"></textarea>
+        </div>
+        <div className="pm-manager-inputs">
+          <input
+            type="text"
+            className="danmaker-input pm-input"
+            value={data.pmName}
+            onChange={handleChange}
+            name="PmName"
+            placeholder="Project Manager"
+          ></input>
+          <select
+            className="danmaker-input"
+            name="pmManager"
+            onChange={(e) => handleChange(e)}
+          >
+            <option value="Projektmeneger">Projektmeneger</option>
+            <option value="ProjektMenegerin">Projektmenegerin</option>
+          </select>
         </div>
 
         <PDFDownloadLink
