@@ -84,7 +84,20 @@
   padding: 10px;
 }
 
+.danmaker-input {
+  padding-bottom: 1rem;
+  font-family: "Raleway";
+  outline: none;
+  border: none;
+  font-size: 2rem;
+  border-bottom: 3px solid #000000;
+  margin: 0 auto;
+  min-height: auto;
+  width: 100%;
+}
+
 .generate-pdf-btn {
+  outline: none;
   color: #ffffff;
   background-color: #000000;
   cursor: pointer;

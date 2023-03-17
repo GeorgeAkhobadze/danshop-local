@@ -9,12 +9,14 @@ const GenerateInvoice = () => {
     companyAddress: "",
     ansprechspartner: "",
     clientAddress: "",
-    date: "",
+    zipAndCity: "zippin",
     angebot: "",
-    companyZip: "",
+    country: "",
+    ortDate: "",
     stuff: "",
     introText: "",
     projektbeschreibung: "",
+    danMaker: "",
     totalPrice: 0,
     totalPriceFee: 0,
   });
@@ -80,18 +82,28 @@ const GenerateInvoice = () => {
               <input
                 className="client-default-input"
                 type="text"
-                placeholder="Ort / Date"
-                value={data.date}
+                placeholder="Zip and City"
+                value={data.zipAndCity}
                 onChange={handleChange}
-                name="date"
+                name="zipAndCity"
               ></input>
               <input
                 className="client-default-input"
                 type="text"
-                placeholder="Client ZIP"
-                value={data.companyZip}
+                placeholder="Country"
+                value={data.country}
                 onChange={handleChange}
-                name="companyZip"
+                name="country"
+              ></input>
+            </div>
+            <div className="client-details-inputs">
+              <input
+                className="client-default-input"
+                type="text"
+                placeholder="Ort/Date"
+                value={data.ortDate}
+                onChange={handleChange}
+                name="ortDate"
               ></input>
             </div>
             <div className="client-details-inputs">
@@ -146,8 +158,15 @@ const GenerateInvoice = () => {
               Ust-Idnr. DE207541440
               <br />
               <br />
-              dma_lac_21001-A
             </p>
+            <input
+              type="text"
+              className="danmaker-input"
+              value={data.danmaker}
+              onChange={handleChange}
+              name="danMaker"
+              placeholder="DanMaker Nr"
+            ></input>
           </div>
         </div>
 
