@@ -20,7 +20,9 @@ const GenerateInvoice = () => {
     totalPrice: 0,
     totalPriceFee: 0,
     pmName: "",
-    pmManager: "Projektmeneger",
+    pmManager: "Projektmanager",
+    timing: "",
+    angebotsgrundlagen: "",
   });
 
   useEffect(() => {
@@ -195,6 +197,28 @@ const GenerateInvoice = () => {
           ></textarea>
         </div>
 
+        <div className="default-text-container">
+          <p className="default-text-title">Angebotsgrundlagen:</p>
+          <textarea
+            className="default-text-input"
+            type="text"
+            value={data.angebotsgrundlagen}
+            onChange={handleChange}
+            name="angebotsgrundlagen"
+          ></textarea>
+        </div>
+
+        <div className="default-text-container">
+          <p className="default-text-title">Timing:</p>
+          <textarea
+            className="default-text-input"
+            type="text"
+            value={data.timing}
+            onChange={handleChange}
+            name="timing"
+          ></textarea>
+        </div>
+
         <div className="pm-manager-inputs">
           <input
             type="text"
@@ -209,8 +233,8 @@ const GenerateInvoice = () => {
             name="pmManager"
             onChange={(e) => handleChange(e)}
           >
-            <option value="Projektmeneger">Projektmeneger</option>
-            <option value="ProjektMenegerin">Projektmenegerin</option>
+            <option value="Projektmeneger">Projektmanager</option>
+            <option value="ProjektMenegerin">Projektmanagerin</option>
           </select>
         </div>
 

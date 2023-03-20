@@ -343,134 +343,100 @@ const PDFDocument = ({ data }) => (
         </View>
       </View>
       <View>
-        {data?.introtext?.length > 0 && (
-          <View style={styles.serviceDefaultContainer}>
-            <Text style={styles.defaultText}>{data?.introText}</Text>
-          </View>
-        )}
+        <View style={styles.serviceDefaultContainer}>
+          <Text style={styles.defaultText}>{data?.introText}</Text>
+        </View>
         {console.log(data?.projektbeschreibung.length, "ITS LOGGING ME")}
         <View style={styles.serviceDefaultContainer}>
-          {!!data?.projektbeschreibung && data.projektbeschreibung > 0 && (
-            <>
-              <Text style={styles.defaultTextBold}>Projektbeschreibung</Text>
-              <Text style={styles.defaultText}>
-                {data?.projektbeschreibung}
-              </Text>
-            </>
-          )}
+          <>
+            <Text style={styles.defaultTextBold}>Projektbeschreibung</Text>
+            <Text style={styles.defaultText}>{data?.projektbeschreibung}</Text>
+          </>
+        </View>
+        <View style={styles.serviceDefaultContainer}>
+          <Text style={styles.defaultTextBold}>Angebotsgrundlagen </Text>
+          <Text style={styles.defaultText}>{data?.angebotsgrundlagen}</Text>
         </View>
 
         <View style={styles.serviceDefaultContainer}>
-          <Text style={styles.defaultTextBold}>Angebotsgrundlagen </Text>
-          <View style={styles.bulletPoint}>
-            <View>
-              <Text style={styles.bulletPointText}>{"\u2022" + " "}</Text>
-            </View>
-            <Text style={styles.defaultText}>Projektprozess</Text>
-          </View>
-          <View style={styles.bulletPoint}>
-            <View>
-              <Text style={styles.bulletPointText}>{"\u2022" + " "}</Text>
-            </View>
-            <Text style={styles.defaultText}>
-              Markenschärfungs-Workshop vom 11.01.2023 inkl. Ergebnisse
-            </Text>
-          </View>
-          <View style={styles.bulletPoint}>
-            <View>
-              <Text style={styles.bulletPointText}>{"\u2022" + " "}</Text>
-            </View>
-            <Text style={styles.defaultText}>
-              Bestehende Unterlagen zur Marke inkl. Purpose/Mission/Vision
-            </Text>
-          </View>
-          <View style={styles.bulletPoint}>
-            <View>
-              <Text style={styles.bulletPointText}>{"\u2022" + " "}</Text>
-            </View>
-            <Text style={styles.defaultText}>
-              Aktuelles Corporate Design der Marke SENS
-            </Text>
-          </View>
-        </View>
-        <View style={styles.serviceDefaultContainer}>
           <Text style={styles.defaultTextBold}>Timing</Text>
-          <View style={styles.bulletPoint}>
-            <View>
-              <Text style={styles.bulletPointText}>{"\u2022" + " "}</Text>
-            </View>
-            <Text style={styles.defaultText}>
-              Ausarbeitung Markenstrategie: KW 4 – KW 8
-            </Text>
-          </View>
+          <Text style={styles.defaultText}>{data?.timing}</Text>
         </View>
       </View>
 
       <View style={styles.serviceDefaultContainer}>
         <Text style={styles.defaultTextBold}>Product List</Text>
         {data?.products?.map((product, i) => {
-          return (
-            <View style={styles.productWrapper}>
-              <View
-                style={styles.productTitleContainer}
-                key={`${product}-${i}`}
-              >
-                <Text style={styles.defaultTextBold}>{i + 1}.</Text>
-                <Text style={styles.defaultTextBold}>{product.name}</Text>
-              </View>
-              <View style={styles.productListWrapper}>
-                {product?.modules?.map((modules) => {
-                  return (
-                    <>
-                      <Text style={styles.defaultTextBold}>
-                        {modules?.title}
-                      </Text>
-                      <View>
-                        {modules?.module?.map((moduleItem) => {
-                          if (moduleItem?.checkbox != false) {
-                            return (
-                              <View style={styles.bulletPoint}>
-                                <View>
-                                  <Text style={styles.bulletPointText}>
-                                    {"\u2022" + " "}
+          let productNumber = 0;
+          if (product?.isInCart == true) {
+            productNumber += 1;
+            return (
+              <View style={styles.productWrapper}>
+                <View
+                  style={styles.productTitleContainer}
+                  key={`${product}-${productNumber}`}
+                >
+                  <Text style={styles.defaultTextBold}>{productNumber}.</Text>
+                  <Text style={styles.defaultTextBold}>{product.name}</Text>
+                </View>
+                <View style={styles.productListWrapper}>
+                  {product?.modules?.map((modules) => {
+                    return (
+                      <>
+                        <Text style={styles.defaultTextBold}>
+                          {modules?.title}
+                        </Text>
+                        <View>
+                          {modules?.module?.map((moduleItem) => {
+                            if (moduleItem?.checkbox != false) {
+                              return (
+                                <View style={styles.bulletPoint}>
+                                  <View>
+                                    <Text style={styles.bulletPointText}>
+                                      {"\u2022" + " "}
+                                    </Text>
+                                  </View>
+                                  <Text style={styles.defaultText}>
+                                    {moduleItem?.name}
                                   </Text>
                                 </View>
-                                <Text style={styles.defaultText}>
-                                  {moduleItem?.name}
-                                </Text>
-                              </View>
-                            );
-                          }
-                        })}
-                      </View>
-                    </>
-                  );
-                })}
-                <View style={styles.productPriceContainer}>
-                  <Text style={styles.defaultText}>Honorarsumme netto</Text>
-                  <Text style={styles.defaultText}>
-                    {product?.priceAmount} €
-                  </Text>
+                              );
+                            }
+                          })}
+                        </View>
+                      </>
+                    );
+                  })}
+                  <View style={styles.productPriceContainer}>
+                    <Text style={styles.defaultText}>Honorarsumme netto</Text>
+                    <Text style={styles.defaultText}>
+                      {product?.priceAmount} €
+                    </Text>
+                  </View>
                 </View>
               </View>
-            </View>
-          );
+            );
+          }
         })}
       </View>
       <View style={styles.serviceDefaultContainer}>
         <Text style={styles.defaultTextBold}>Honorarzusammenfassung</Text>
         <View style={styles.serviceDefaultContainer}>
           {data?.products?.map((product, i) => {
-            return (
-              <View style={styles.productPricesMapped}>
-                <Text style={styles.defaultText}>
-                  {i + 1} {product?.name}
-                </Text>
-                <Text style={styles.defaultText}>
-                  {i + 1} {product?.priceAmount} €
-                </Text>
-              </View>
-            );
+            let productCount = 0;
+            if (product?.isInCart === true) {
+              productCount += 1;
+              return (
+                <View style={styles.productPricesMapped}>
+                  <Text style={styles.defaultText}>
+                    {productCount} {product?.name}
+                  </Text>
+                  <Text style={styles.defaultText}>
+                    {product?.priceAmount} €
+                  </Text>
+                </View>
+              );
+            }
           })}
         </View>
         <View style={styles.serviceDefaultContainer}>
