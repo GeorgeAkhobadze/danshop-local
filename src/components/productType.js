@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import "./productCatalog.css";
-import digitalImg from "../assets/digital-img.svg";
-import analogImg from "../assets/analog-img.svg";
-import hybridImg from "../assets/hybrid-img.svg";
+import digitalImg from "../assets/digital-img.jpg";
+import analogImg from "../assets/analog-img.jpg";
+import hybridImg from "../assets/hybrid-img.jpg";
 import "./productType.css";
 import Header from "./header/header";
 let products = JSON.parse(localStorage.getItem("products"));

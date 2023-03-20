@@ -3,12 +3,12 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import "./productCatalog.css";
 import pureBgImg from "../assets/pure-bg-img.svg";
-import product1Img from "../assets/markenentwicklung-product-img.svg";
-import product2Img from "../assets/naming-product-img.svg";
-import product3Img from "../assets/omnichannelkonzept-product-img.svg";
-import product4Img from "../assets/corporatedesign-product-img.svg";
-import product5Img from "../assets/employerbranding-product-img.svg";
-import product6Img from "../assets/audit-product-img.svg";
+import product1Img from "../assets/markenentwicklung-product-img.jpg";
+import product2Img from "../assets/naming-product-img.jpg";
+import product3Img from "../assets/omnichannelkonzept-product-img.jpg";
+import product4Img from "../assets/corporatedesign-product-img.jpg";
+import product5Img from "../assets/employerbranding-product-img.jpg";
+import product6Img from "../assets/audit-product-img.jpg";
 import Header from "./header/header";
 
 const ProductCatalog = () => {

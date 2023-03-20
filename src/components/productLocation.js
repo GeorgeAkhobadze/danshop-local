@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
-import beidanImg from "../assets/beidan-img.svg";
-import beimkundenImg from "../assets/beimkunden-img.svg";
-import externerImg from "../assets/externer-img.svg";
+import beidanImg from "../assets/beidan-img.jpg";
+import beimkundenImg from "../assets/beimkunden-img.jpg";
+import externerImg from "../assets/externer-img.jpg";
 import Header from "./header/header";
 
 const ProductLocation = () => {
