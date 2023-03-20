@@ -2,7 +2,7 @@ import logo from "../logo.svg";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import "./productCatalog.css";
-import pureBgImg from "../assets/pure-bg-img.svg";
+import pureBgImg from "../assets/pure-bg-img.jpg";
 import product1Img from "../assets/markenentwicklung-product-img.jpg";
 import product2Img from "../assets/naming-product-img.jpg";
 import product3Img from "../assets/omnichannelkonzept-product-img.jpg";
