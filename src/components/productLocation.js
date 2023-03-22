@@ -18,17 +18,28 @@ const ProductLocation = () => {
 
   useEffect(() => {
     if (product?.workshop.workshopLocation !== "") {
+      const updatedProduct = {
+        ...product,
+        workshop: {
+          ...product.workshop,
+          workshopLocation: "",
+          workshopLocationPrice: 0,
+        },
+      };
+      updateChangesLocal(updatedProduct);
       setPage(1);
     }
-    // const updatedProduct = {
-    //   ...product,
-    //   workshop: {
-    //     ...product.workshop,
-    //     workshopLocation: "",
-    //     workshopLocationPrice: 0,
-    //   },
-    // };
-    // updateChangesLocal(updatedProduct);
+    if (product?.workshop.workshopPlace === "In Berlin") {
+      const updatedProduct = {
+        ...product,
+        workshop: {
+          ...product.workshop,
+          workshopLocation: "",
+          workshopLocationPrice: 500,
+        },
+      };
+      updateChangesLocal(updatedProduct);
+    }
   }, []);
 
   const updateChangesLocal = (updatedProduct) => {
@@ -50,25 +61,26 @@ const ProductLocation = () => {
         ...product,
         workshop: {
           ...product.workshop,
-          [field]: value,
+          workshopPlace: "In Berlin",
           workshopLocationPrice: 500,
+          [field]: value,
         },
       };
-      console.log(updatedProduct);
       updateChangesLocal(updatedProduct);
-      setPage(page + 1);
+      setPage(3);
     } else if (value === "Externer Workshop Place") {
       const updatedProduct = {
         ...product,
         workshop: {
           ...product.workshop,
           [field]: value,
-          workshopLocationPrice: 2200,
+          workshopLocationPrice: 0,
+          workshopPlace: "",
         },
       };
       console.log(updatedProduct);
       updateChangesLocal(updatedProduct);
-      setPage(page + 1);
+      setPage(2);
     } else {
       const updatedProduct = {
         ...product,
@@ -77,11 +89,36 @@ const ProductLocation = () => {
           ...product.workshop,
           [field]: value,
           workshopLocationPrice: 0,
+          workshopPlace: "",
         },
       };
       console.log(updatedProduct);
       updateChangesLocal(updatedProduct);
-      setPage(page + 1);
+      setPage(2);
+    }
+  };
+
+  const handleLocationChange = (e, field) => {
+    if (e.target.value === "In Berlin") {
+      const updatedProduct = {
+        ...product,
+        workshop: {
+          ...product.workshop,
+          [field]: e.target.value,
+          workshopLocationPrice: 500,
+        },
+      };
+      updateChangesLocal(updatedProduct);
+    } else {
+      const updatedProduct = {
+        ...product,
+        workshop: {
+          ...product.workshop,
+          [field]: e.target.value,
+          workshopLocationPrice: 2200,
+        },
+      };
+      updateChangesLocal(updatedProduct);
     }
   };
 
@@ -120,9 +157,6 @@ const ProductLocation = () => {
   useEffect(() => {
     console.log(participantsSubmitted);
     if (participantsSubmitted == true) {
-      // console.log(
-      //   `/${product.name}/${product.workshop.workshopType}/${product.id}/modules`
-      // );
       navigate(
         `/${product.name}/${product.workshop.workshopType}/${product.id}/modules`
       );
@@ -185,6 +219,28 @@ const ProductLocation = () => {
           <button
             onClick={() => submitParticipants()}
             className="submit-participants-btn"
+          >
+            WEITER
+          </button>
+        </div>
+      </>
+    );
+  } else if (page === 3) {
+    return (
+      <>
+        <Header />
+        <div className="products-section-wrapper products-section-wrapper--top products-section-wrapper--location">
+          <h3>WO BEFINDET SICH DER KUNDE?</h3>
+          <select
+            className="participant-input"
+            onChange={(e) => handleLocationChange(e, "workshopPlace")}
+          >
+            <option>In Berlin</option>
+            <option>Außerhalb Berlins</option>
+          </select>
+          <button
+            className="submit-participants-btn"
+            onClick={() => setPage(2)}
           >
             WEITER
           </button>
