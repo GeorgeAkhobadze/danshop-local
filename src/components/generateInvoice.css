@@ -9,6 +9,14 @@
   gap: 40px;
   margin: 0 auto;
 }
+.pdf-container form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 40px;
+}
 
 .company-details {
   display: flex;
@@ -38,11 +46,11 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 12px;
 }
 
 .client-details input {
-  border: none;
+  /* border: none; */
   background-color: transparent;
 }
 
@@ -90,6 +98,10 @@
   box-sizing: border-box;
   padding: 10px;
 }
+.error-msg {
+  font-size: 12px;
+  color: red;
+}
 
 .danmaker-input {
   padding-bottom: 1rem;
@@ -97,7 +109,7 @@
   outline: none;
   border: none;
   font-size: 2rem;
-  border-bottom: 3px solid #000000;
+  border-bottom: 2px solid #000000;
   margin: 0 auto;
   min-height: auto;
   width: 100%;

@@ -2,8 +2,13 @@ import { PDFDownloadLink, PDFViewer } from "@react-pdf/renderer";
 import { useEffect, useState } from "react";
 import Header from "./header/header";
 import PDFDocument from "./PDFDocument";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
 
 const GenerateInvoice = () => {
+  const [isButton1Clicked, setIsButton1Clicked] = useState(false);
+  const [isButton2Clicked, setIsButton2Clicked] = useState(false);
+
   const [data, setData] = useState({
     products: JSON.parse(localStorage.getItem("products")),
     companyAddress: "",
@@ -48,6 +53,11 @@ const GenerateInvoice = () => {
       ...prevState,
       [name]: value,
     }));
+  };
+
+  const handleButton1Click = () => {
+    setIsButton1Clicked(true);
+    setIsButton2Clicked(true);
   };
 
   return (

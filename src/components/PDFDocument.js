@@ -95,7 +95,9 @@ const styles = StyleSheet.create({
   defaultText: {
     fontSize: 8,
     fontFamily: "Rawline",
+    fontWeight: 400,
   },
+
   defaultTextBold: {
     fontSize: 8,
     fontFamily: "Rawline",
@@ -275,6 +277,17 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
   },
+  secondListBullet: {
+    fontSize: 8,
+    fontFamily: "Rawline",
+    fontWeight: 400,
+    marginLeft: 20,
+  },
+  secondListContainer: {
+    display: "flex",
+    flexDirection: "column",
+    fontWeight: 600,
+  },
 });
 
 const PDFDocument = ({ data }) => (
@@ -388,18 +401,44 @@ const PDFDocument = ({ data }) => (
                         </Text>
                         <View>
                           {modules?.module?.map((moduleItem) => {
+                            console.log(moduleItem?.list);
                             if (moduleItem?.checkbox != false) {
                               return (
-                                <View style={styles.bulletPoint}>
-                                  <View>
-                                    <Text style={styles.bulletPointText}>
-                                      {"\u2022" + " "}
+                                <>
+                                  <View style={styles.bulletPoint}>
+                                    <View>
+                                      <Text style={styles.bulletPointText}>
+                                        {"\u2022" + " "}
+                                      </Text>
+                                    </View>
+                                    <Text style={styles.defaultText}>
+                                      {moduleItem?.name}
                                     </Text>
                                   </View>
-                                  <Text style={styles.defaultText}>
-                                    {moduleItem?.name}
-                                  </Text>
-                                </View>
+                                  {moduleItem?.note ? (
+                                    <Text style={styles.defaultText}>
+                                      {moduleItem?.note}
+                                    </Text>
+                                  ) : null}
+                                  <View style={styles.secondListContainer}>
+                                    {moduleItem?.list
+                                      ? moduleItem?.list.map((item) => {
+                                          return (
+                                            <Text
+                                              style={styles.secondListBullet}
+                                            >
+                                              {item}
+                                            </Text>
+                                          );
+                                        })
+                                      : null}
+                                    {moduleItem?.result ? (
+                                      <Text style={styles.defaultText}>
+                                        {moduleItem?.result}
+                                      </Text>
+                                    ) : null}
+                                  </View>
+                                </>
                               );
                             }
                           })}

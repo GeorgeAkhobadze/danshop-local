@@ -66,61 +66,122 @@ const ProductModules = () => {
               ],
             },
             {
-              title: "Audit",
+              title: "Grundlagenermittlung",
               module: [
                 {
-                  name: "Wettbewerbsanalyse",
+                  name: "Markenaudit inkl. Kickoff (digital) ",
                   hasCheckbox: false,
-                  checkbox: null,
+                  price: 10000,
+                  checkbox: true,
+                  list: [
+                    "• Einholung, Sichtung und Analyse der zur Verfügung stehenden bzw. gestellten Informationen und Arbeitsmaterialen für ein umfassendes Verständnis des Status Quo und der Rahmenbedingungen des Projektes. Die Unterlagen sind vom Auftraggeber an dp zu übergeben, z.B.",
+                    "• Strategie, Wettbewerbsumfeld, Kommunikation",
+                    "• Corporate Design Richtlinien (Manuals, Guidelines) & Elemente, (Logos, Schriften, Farbwerte, …)",
+                    "• Kommunikationselemente wie Printmedien, Online-Kanäle, Digitalmedien, Messeauftritte, POS-Material etc.",
+                    "• Abstimmung der ersten Erkenntnisse mit dem Kunden per Telefon / Videokonferenz als Kick-Off Termin oder Scoping Session",
+                  ],
+                  result:
+                    "Ergebnis: dp verfügt nach Sichtung und Auswertung der Unterlagen über ein umfassendes Verständnis des Status Quo und der Rahmenbedingungen des Projektes und dient als Basis für den weiteren Projektverlauf.",
                 },
                 {
-                  name: "Trend-und Benchmarkanalyse",
+                  name: "Benchmark-Impuls",
+                  price: 5200,
                   hasCheckbox: false,
-                  checkbox: null,
-                },
-                {
-                  name: "Zilgruppananalyse",
-                  hasCheckbox: false,
-                  checkbox: null,
-                },
-                {
-                  name: "Design Audit",
-                  hasCheckbox: true,
-                  checkbox: null,
-                  price: 200,
+                  checkbox: true,
+                  list: [
+                    "• Analyse von markenprägenden Prinzipien von Wettbewerbern (Best Practice)",
+                    "• Ableiten von Leranings zur integration der Markentwicklung (Was macht andere Marken eerfolgreich, was können wir besser machen?)",
+                    "• Daraus ableiten von Positionierungsabsätzen und Alleistellungsmerkmal für den Workshop",
+                  ],
                 },
               ],
             },
             {
-              title: "Markenentwicklung",
+              title: "Marken-Workshop",
               module: [
                 {
-                  name: "Mission, Vision, Purpouse",
+                  name: "Vorbereitung",
+                  list: [
+                    "• Methodische und Inhaltliche Vorbereitung des Workshops auf Basis und unter Berücksichtigung der Ergebnisse der Grundlagenermittlung",
+                    "• Erstellung und Aufbereitung der notwendigen Workshop-Materialien",
+                    "• Abstimmung des Ablaufs und der Agenda mit dem Kunden",
+                    "• Verortung im Wettbewerbsumfeld: Diskussion der Ziel-Positionierung im Angebotsumfeld der Marke(n)",
+                    "• Erarbeitung der rationalen und emotionalen Marken-Benefits: Clustern der Mehrwerte, die die Marke(n) ihren Kommunikationspartnern bietet/n",
+                    "• Recherche und Betrachtung von relevanten Trends und Best Practices sowie Entwicklungen im jeweiligen Geschäftsfeld anhand von Desktopresearch",
+                    "• Strukturierung der relevanten Trends, zugehöriger Phänomene und Benchmarks ",
+                    "• Erarbeitung von Zielgruppen-Personas: Identifikation zentraler Bedürfnisse der Zielgruppen für die Marke(n)",
+                  ],
+                  hasCheckbox: false,
+                  price: 14000,
+                  checkbox: true,
+                },
+                {
+                  name: "Durchführung: Strategie & Positionierung",
+                  note: "Ziel: Herausarbeitung der Einzigartigkeit der Marke.",
+                  list: [
+                    "• Besprechung der Inhaltde und Learnings aus der Grundlagenermittlung",
+                    "• Formulierung, Abstimmung und Verabschiedung der Positionierung",
+                    "• Gemeinsame Erarbeitung und Formulierung eines zentralen Markenkerns und dazugehöriger Markenwerte auf Basis der Unternehmensmission & -vision sowie Markenpositionierung",
+                    "• Gemeinsame Entwicklung und Finalisierung von Zielgruppen und zentraler Bedürfnisprofile",
+                    "• Erarbeitung und Formulierung von Vision, Purpose und Mission Statement",
+                    "• Diskussion und Abgleich zentraler Unternehmenswerte",
+                    "• Erarbeitung der Brand-Story und Ableitung relevanter Marken-Botschaften",
+                  ],
                   hasCheckbox: false,
                   checkbox: null,
                 },
-                { name: "Markenmodell", hasCheckbox: false, checkbox: null },
-                { name: "Markenkern", hasCheckbox: false, checkbox: null },
-                { name: "Markenwerte", hasCheckbox: false, checkbox: null },
-                { name: "Positionierung", hasCheckbox: false, checkbox: null },
-                { name: "Brand Story", hasCheckbox: false, checkbox: null },
+                {
+                  name: "Nachbereitung",
+                  list: [
+                    "• Ausarbeitung Leitplanken der Markenstrategie",
+                    "• Ausarbeitung und Verabschiedung des Markenleitbildes im Hinblick auf",
+                    "• Markenmodell",
+                    "• Markendifferenzierung",
+                    "• Markenrelevanz",
+                    "• Markenvision",
+                    "• Wettbewerbspositionierung",
+                  ],
+                  result:
+                    "Grafische und inhaltlich aufgearbeitete Dokumentation des Workshops und der gemeinsam erarbeiteten Ergebnisse, in Form einer Präsentation, ca. xx- xx Seiten.",
+                },
+              ],
+            },
+            {
+              name: "Deliverable",
+              module: [
+                {
+                  name: "Präsentationsdokument mit ausgearbeiteten Inhalten der Markenbildung",
+                  list: [
+                    "• Präsentationdokument/-Booklet mit allen augearbeiteten Inhalten zur Markenbildung",
+                  ],
+                  hasCheckbox: false,
+                  checkbox: true,
+                  price: 7000,
+                },
                 {
                   name: "Markenarchitektur",
                   hasCheckbox: true,
-                  checkbox: null,
-                  price: 200,
+                  checkbox: false,
                 },
                 {
-                  name: "Produktportfolio",
+                  name: "Product Naming",
                   hasCheckbox: true,
-                  checkbox: null,
-                  price: 200,
+                  checkbox: false,
                 },
                 {
-                  name: "Impulsvortrag",
+                  name: "Product Logo",
                   hasCheckbox: true,
-                  checkbox: null,
-                  price: 200,
+                  checkbox: false,
+                },
+                {
+                  name: "Corporate Identity",
+                  hasCheckbox: true,
+                  checkbox: false,
+                },
+                {
+                  name: "Kommunikationsanalyse",
+                  hasCheckbox: true,
+                  checkbox: false,
                 },
               ],
             },
@@ -169,6 +230,116 @@ const ProductModules = () => {
                 },
               ],
             },
+
+            // {
+            //   title: "Audit",
+            //   module: [
+            //     {
+            //       name: "Wettbewerbsanalyse",
+            //       hasCheckbox: false,
+            //       checkbox: null,
+            //     },
+            //     {
+            //       name: "Trend-und Benchmarkanalyse",
+            //       hasCheckbox: false,
+            //       checkbox: null,
+            //     },
+            //     {
+            //       name: "Zilgruppananalyse",
+            //       hasCheckbox: false,
+            //       checkbox: null,
+            //     },
+            //     {
+            //       name: "Design Audit",
+            //       hasCheckbox: true,
+            //       checkbox: null,
+            //       price: 200,
+            //     },
+            //   ],
+            // },
+            // {
+            //   title: "Markenentwicklung",
+            //   module: [
+            //     {
+            //       name: "Mission, Vision, Purpouse",
+            //       hasCheckbox: false,
+            //       checkbox: null,
+            //     },
+            //     { name: "Markenmodell", hasCheckbox: false, checkbox: null },
+            //     { name: "Markenkern", hasCheckbox: false, checkbox: null },
+            //     { name: "Markenwerte", hasCheckbox: false, checkbox: null },
+            //     { name: "Positionierung", hasCheckbox: false, checkbox: null },
+            //     { name: "Brand Story", hasCheckbox: false, checkbox: null },
+            //     {
+            //       name: "Markenarchitektur",
+            //       hasCheckbox: true,
+            //       checkbox: null,
+            //       price: 200,
+            //       note: "Ziel: Die Struktur der Beziehungen der einzelnen Marken innerhalb eines Unternehmens werden sichtbar und verständlich dargestellt. ",
+            //       list: [
+            //         "•	Darstellung und Diskussion der aktuellen Markenarchitektur des Kunden",
+            //         "•	Vorstellung und Besprechung unterschiedlicher Varianten eines Markenmodells",
+            //       ],
+            //     },
+            //     {
+            //       name: "Produktportfolio",
+            //       hasCheckbox: true,
+            //       checkbox: null,
+            //       price: 200,
+            //     },
+            //     {
+            //       name: "Impulsvortrag",
+            //       hasCheckbox: true,
+            //       checkbox: null,
+            //       price: 200,
+            //     },
+            //   ],
+            // },
+            // {
+            //   title: "Allgemeine Leistungen Nachbereitung/ Dokumentation",
+            //   module: [
+            //     {
+            //       name: "Aufbereitung & Verdichtung WS-Ergebnisse",
+            //       hasCheckbox: false,
+            //       checkbox: null,
+            //     },
+            //     {
+            //       name: "Handlungsempfehlungen",
+            //       hasCheckbox: false,
+            //       checkbox: null,
+            //     },
+            //     {
+            //       name: "Fazit & Next Steps",
+            //       hasCheckbox: false,
+            //       checkbox: null,
+            //     },
+            //     {
+            //       name: "Gemeinsame Durchsprache der Ergebnisse via ViKo",
+            //       hasCheckbox: false,
+            //       checkbox: null,
+            //     },
+            //     {
+            //       name: "1 Korrekturschleife / Einarbeitung Feedback",
+            //       hasCheckbox: false,
+            //       checkbox: null,
+            //     },
+            //     {
+            //       name: "Bereitstellung der Daten",
+            //       hasCheckbox: false,
+            //       checkbox: null,
+            //     },
+            //     {
+            //       name: "WO werden die Daten bereitgestellt",
+            //       hasCheckbox: false,
+            //       checkbox: null,
+            //     },
+            //     {
+            //       name: "Medium --> Foto dokumentation / PP-Präsenation",
+            //       hasCheckbox: false,
+            //       checkbox: null,
+            //     },
+            //   ],
+            // },
           ],
         };
         updateChangesLocal(updatedObject);
