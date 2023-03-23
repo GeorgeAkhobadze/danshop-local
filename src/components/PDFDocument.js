@@ -103,6 +103,13 @@ const styles = StyleSheet.create({
     fontFamily: "Rawline",
     fontWeight: 800,
   },
+  mainModuleTitle: {
+    marginTop: 5,
+    marginBottom: 5,
+    fontSize: 8,
+    fontFamily: "Rawline",
+    fontWeight: 800,
+  },
   productTitleNumber: {
     fontSize: 8,
     fontFamily: "Rawline",
@@ -402,7 +409,7 @@ const PDFDocument = ({ data }) => (
                   {product?.modules?.map((modules) => {
                     return (
                       <>
-                        <Text style={styles.defaultTextBold}>
+                        <Text style={styles.mainModuleTitle}>
                           {modules?.title}
                         </Text>
                         <View>
