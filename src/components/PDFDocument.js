@@ -153,6 +153,12 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
     marginLeft: 10,
   },
+  note: {
+    marginLeft: 10,
+    fontSize: 8,
+    fontFamily: "Rawline",
+    fontWeight: 400,
+  },
   bulletPointDescription: {
     display: "flex",
     flexDirection: "row",
@@ -416,7 +422,7 @@ const PDFDocument = ({ data }) => (
                                     </Text>
                                   </View>
                                   {moduleItem?.note ? (
-                                    <Text style={styles.defaultText}>
+                                    <Text style={styles.note}>
                                       {moduleItem?.note}
                                     </Text>
                                   ) : null}
