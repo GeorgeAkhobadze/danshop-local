@@ -147,7 +147,7 @@ const ProductModules = () => {
               ],
             },
             {
-              name: "Deliverable",
+              title: "Deliverable",
               module: [
                 {
                   name: "Präsentationsdokument mit ausgearbeiteten Inhalten der Markenbildung",
