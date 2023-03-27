@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import "./productCatalog.css";
 import digitalImg from "../assets/digital-img.jpg";
@@ -6,6 +6,7 @@ import analogImg from "../assets/analog-img.jpg";
 import hybridImg from "../assets/hybrid-img.jpg";
 import "./productType.css";
 import Header from "./header/header";
+import gsap from "gsap";
 let products = JSON.parse(localStorage.getItem("products"));
 
 const ProductType = () => {
@@ -69,14 +70,32 @@ const ProductType = () => {
     navigate(`/${myObject.name}/workshop/${myObject.id}/modules`);
   };
 
+  const titleRef = useRef(null);
+
+  useEffect(() => {
+    gsap.to(".workshop-title", {
+      duration: 0.5,
+      y: 0,
+      stagger: 0.3,
+      delay: 0.7,
+    });
+    console.log("IM LOGGED");
+  }, [page]);
+
   return (
     <>
       <Header />
       {page === 1 && (
         <div className="workshop-question-container">
-          <p className="workshop-question-title">
-            WOULD YOU LIKE TO HAVE A WORKSHOP?
-          </p>
+          <div className="workshop-title-container">
+            <h3
+              className="workshop-title workshop-question-title"
+              ref={titleRef}
+            >
+              WOULD YOU LIKE TO HAVE A WORKSHOP?
+            </h3>
+          </div>
+
           <div className="workshop-question-buttons">
             <button
               className="workshop-question-btn"
@@ -95,7 +114,12 @@ const ProductType = () => {
       )}
       {page === 2 && (
         <div className="products-section-wrapper products-section-wrapper--top">
-          <h3>WÄHLE DIE ART DES WORKSHOPS</h3>
+          <div className="workshop-title-container">
+            <h3 className="workshop-title" ref={titleRef}>
+              WÄHLE DIE ART DES WORKSHOPS
+            </h3>
+          </div>
+
           <div className="products-container product-container-top">
             <div
               className="product"
@@ -126,13 +150,3 @@ const ProductType = () => {
 };
 
 export default ProductType;
-
-// if (updatedProduct.workshop.workshopType == "Analog") {
-//   navigate(
-//     `/${updatedProduct.name}/${updatedProduct.workshop.workshopType}/${updatedProduct.id}/location`
-//   );
-// } else {
-//   navigate(
-//     `/${updatedProduct.name}/${updatedProduct.workshop.workshopType}/${updatedProduct.id}/modules`
-//   );
-// }

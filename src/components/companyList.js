@@ -5,16 +5,37 @@ import company2 from "../assets/company-2.svg";
 import company3 from "../assets/company-3.svg";
 import company4 from "../assets/company-4.svg";
 import company5 from "../assets/company-5.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "./header/header";
+import gsap from "gsap";
 
 const CompanyList = () => {
+  useEffect(() => {
+    gsap.to(".landing-heading-div", {
+      duration: 0.5,
+      y: 0,
+      stagger: 0.3,
+      delay: 0.7,
+    });
+  }, []);
+
   const navigate = useNavigate();
   const [companySelected, setCompanySelected] = useState(false);
 
   const handleCompanyClick = () => {
     setCompanySelected(true);
   };
+
+  useEffect(() => {
+    if (companySelected) {
+      gsap.to(".landing-heading-div", {
+        duration: 0.5,
+        y: 0,
+        stagger: 0.3,
+        delay: 0.7,
+      });
+    }
+  }, [companySelected]);
 
   const handleCustomerType = (value) => {
     localStorage.setItem("customerType", value);
@@ -26,11 +47,19 @@ const CompanyList = () => {
       <div className="company-list--wrapper">
         {!companySelected && (
           <>
-            <h1>
-              FÜR WELCHES UNTERNEHMEN
-              <br />
-              MÖCHTEST DU EIN ANGEBOT ERSTELLEN?
-            </h1>
+            <div className="landing-heading">
+              <h2>
+                <div className="landing-heading-div">
+                  FÜR WELCHES UNTERNEHMEN
+                </div>
+              </h2>
+              <h2>
+                <div className="landing-heading-div">
+                  MÖCHTEST DU EIN ANGEBOT ERSTELLEN?
+                </div>
+              </h2>
+            </div>
+
             <div className="company-list">
               <div
                 onClick={() => handleCompanyClick()}
@@ -67,11 +96,18 @@ const CompanyList = () => {
         )}
         {companySelected && (
           <>
-            <h1>
-              FÜR WELCHEN KUNDENTYP MÖCHTEST
-              <br />
-              DU EIN ANGEBOT ERSTELLEN?
-            </h1>
+            <div className="landing-heading">
+              <h2>
+                <div className="landing-heading-div">
+                  FÜR WELCHES UNTERNEHMEN
+                </div>
+              </h2>
+              <h2>
+                <div className="landing-heading-div">
+                  MÖCHTEST DU EIN ANGEBOT ERSTELLEN?
+                </div>
+              </h2>
+            </div>
             <div className="company-list">
               <div
                 onClick={() => handleCustomerType("PURE")}

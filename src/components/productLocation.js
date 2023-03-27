@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import gsap from "gsap";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import beidanImg from "../assets/beidan-img.jpg";
 import beimkundenImg from "../assets/beimkunden-img.jpg";
@@ -163,12 +164,25 @@ const ProductLocation = () => {
     }
   }, [participantsSubmitted]);
 
+  useEffect(() => {
+    gsap.to(".workshop-title", {
+      duration: 0.5,
+      y: 0,
+      stagger: 0.3,
+      delay: 0.7,
+    });
+  }, [page]);
+
   if (page == 1) {
     return (
       <>
         <Header />
         <div className="products-section-wrapper products-section-wrapper--top">
-          <h3>WO SOLL DER WORKSHOP STATTFINDEN?</h3>
+          <div className="workshop-title-container">
+            <h3 className="workshop-title workshop-question-title">
+              WO SOLL DER WORKSHOP STATTFINDEN?
+            </h3>
+          </div>
           <div className="products-container product-container-top">
             <div
               className="product"
@@ -206,7 +220,11 @@ const ProductLocation = () => {
       <>
         <Header />
         <div className="products-section-wrapper products-section-wrapper--top products-section-wrapper--location">
-          <h3>WIE VIELE TEILNEHMENDEN HAST DU?</h3>
+          <div className="workshop-title-container">
+            <h5 className="workshop-title workshop-question-title">
+              WIE VIELE TEILNEHMENDEN HAST DU?
+            </h5>
+          </div>
           <input
             className="participant-input"
             type="number"
@@ -230,7 +248,11 @@ const ProductLocation = () => {
       <>
         <Header />
         <div className="products-section-wrapper products-section-wrapper--top products-section-wrapper--location">
-          <h3>WO BEFINDET SICH DER KUNDE?</h3>
+          <div className="workshop-title-container">
+            <h4 className="workshop-title workshop-question-title">
+              WO BEFINDET SICH DER KUNDE?
+            </h4>
+          </div>
           <select
             className="participant-input"
             onChange={(e) => handleLocationChange(e, "workshopPlace")}

@@ -11,7 +11,7 @@
   width: 100%;
 }
 
-.company-list--wrapper h1 {
+.company-list--wrapper h2 {
   margin: 0rem;
   font-size: 6rem;
   font-family: "Futura";
@@ -26,7 +26,6 @@
   width: 100%;
   padding: 0px 14rem;
   box-sizing: border-box;
-  flex: 1 1 auto;
 }
 
 .company-card {
@@ -125,4 +124,12 @@
   text-align: center;
   font-family: "Futura";
   display: none;
+}
+
+.landing-heading > h2 {
+  overflow: hidden;
+}
+
+h2 > div {
+  transform: translateY(100%);
 }

@@ -30,3 +30,22 @@
   justify-content: center;
   gap: 8.6rem;
 }
+
+.workshop-title-container {
+  overflow: hidden;
+  margin-bottom: 4rem;
+}
+
+.workshop-title {
+  margin: 0px !important;
+  transform: translateY(100%);
+}
+
+.workshop-title-2 {
+  margin: 0px !important;
+  transform: translateY(100%);
+}
+.workshop-title-3 {
+  margin: 0px !important;
+  transform: translateY(100%);
+}

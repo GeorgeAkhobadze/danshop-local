@@ -554,7 +554,7 @@ const ProductModules = () => {
               title: "Audit",
               module: [
                 {
-                  name: "Grundlagenermitlung (Quick Check)",
+                  name: "Grundlagenermittlung (Quick Check)",
                   hasCheckbox: false,
                   checkbox: null,
                 },
@@ -1118,79 +1118,120 @@ const ProductModules = () => {
               ],
             },
             {
-              title: "Audit",
+              title: "Grundlagenermittlung",
               module: [
                 {
-                  name: "Erste Standortanalyse",
+                  name: "Audit & Grundlagenermittlung inkl. Ortsbegehung",
                   hasCheckbox: false,
-                  checkbox: null,
+                  checkbox: true,
+                  price: 9500,
+                  list: [
+                    "•	Grundlagenermittlung, inkl. Einholung, Sichtung und Auswertung aller vom Kd. zu Verfügung gestellten (Planungs-) Unterlagen, inkl. Konzeptansätze des ggf. involvierten Architekturbüros",
+                    "•	Erarbeitung des Status Quo und der Rahmenbedingungen des Projektes",
+                    "•	Begehung des Ortes und der Umgebung zum eingehenden Verständnis der örtlichen Ausgangssituation",
+                    "•	Betrachtung der Status Quo der Außenkommunikation über das Projekt",
+                  ],
                 },
                 {
-                  name: "Wettbewerbsanalyse",
+                  name: "Umfeldanalyse",
                   hasCheckbox: false,
-                  checkbox: null,
+                  checkbox: true,
+                  price: 4500,
+                  list: [
+                    "•	Aufbauend auf und ergänzend zu bereits vom Kunden durchgeführte Analysen und Studien, Erarbeitung einer Standortanalyse nach o.g. Begehung",
+                    "•	Analyse Mikro- & Makro-Standort",
+                    "•	SWOT-Analyse, d.h. Darstellung der Chancen und Risiken oder ggf. erster Impuls zur Bedarfsermittlung für einzelne Assetklassen (z.B. Wohnen, Büro, etc.) auf Basis von bereits bestehenden Studien Seitens des Kunden und Ergänzung durch Erkenntnisse seitens dp",
+                  ],
                 },
                 {
-                  name: "Trend- und Benchmarkanalyse",
+                  name: "Trend- und Benchmark-Impuls",
                   hasCheckbox: false,
-                  checkbox: null,
+                  checkbox: true,
+                  price: 5500,
+                  list: [
+                    "•	Recherche und Betrachtung von relevanten Trends und Best Practices sowie Entwicklungen im jeweiligen Geschäftsfeld anhand von Desktopresearch (Fachmagazine, Websites, frei verfügbare Studien etc.)",
+                    "•	Strukturierung der relevanten Trends, zugehöriger Phänomene und Benchmarks ",
+                    "•	Betrachung von Vergleichsprojekten und Ableiten von Learnings für den weiteren Projektverlauf",
+                  ],
                 },
                 {
                   name: "Architectual Audit",
                   hasCheckbox: true,
-                  price: 200,
+                  price: 0,
                   checkbox: false,
                 },
               ],
             },
             {
-              title: "Visionsentwicklung",
+              title: "Visions-Workshop",
               module: [
                 {
-                  name: "Positionierung & Differenzierung vom Wettbewerb",
+                  name: "Vorbereitung",
                   hasCheckbox: false,
-                  checkbox: null,
+                  checkbox: true,
+                  price: 14600,
+                  list: [
+                    "•	Methodische und Inhaltliche Vorbereitung des Workshops auf Basis und unter Berücksichtigung der Ergebnisse der Grundlagenermittlung",
+                    "•	Erstellung und Aufbereitung der notwendigen Workshop-Materialien",
+                    "•	Erstellung von 2 Design-Routen für die wietere Projektkommunikation zur gemeinsamen Evaluierung im Workshop",
+                    "•	Abstimmung des Ablaufs und der Agenda mit dem Kunden",
+                  ],
                 },
                 {
-                  name: "Visionsentwicklung & übergreifende Projektvision",
+                  name: "Durchführung",
                   hasCheckbox: false,
                   checkbox: null,
+                  list: [
+                    "•	Besprechung der Inhaltde und Learnings aus der Grundlagenermittlung",
+                    "•	Gemeinsame Erarbeitung und Verabschiedung eines Projektleitbildes, das bei der kreativen und organisatorischen Gestaltung zukünftiger Maßnahmen als Grundlage dient.",
+                    "•	Gemeinsame Formulierung einer Projektvision und eines Gesamtnarratives",
+                    "•	Gemeinsame Erarbeitung und Finalisierung der Vision in klarer Abgrenzung zu Wettbewerbern im Einzugsgebiet",
+                    "•	Zusammenführung der Ergebnisse in Form einer emotionalisierten Storyline",
+                    "•	Evaluierung und Verabschiedung einer Design-Route",
+                  ],
                 },
                 {
-                  name: "Entwicklung einer Storyline",
+                  name: "Nachbereitung",
                   hasCheckbox: false,
                   checkbox: null,
-                },
-                {
-                  name: "Marken- & Projektleitbild",
-                  hasCheckbox: false,
-                  checkbox: null,
+                  list: [
+                    "•	Grafische und inhaltlich aufgearbeitete Dokumentation des Workshops  ",
+                    "•	Besprechung der Workshop-Dokumentation per Videokonferenz",
+                  ],
                 },
               ],
             },
             {
-              title: "Ausarbeitung",
+              title: "Deliverable",
               module: [
                 {
                   name: "Erstellung eines Pitch Deck CI: dp oder Kunden CI",
                   hasCheckbox: false,
-                  checkbox: null,
-                },
-                {
-                  name: "Ausarbeitung & Ausgestaltung der Storyline & bebilderte Konzepttexte",
-                  hasCheckbox: false,
-                  checkbox: null,
-                },
-                {
-                  name: "Schulterblick zur Abstimmung finales Design & Text",
-                  hasCheckbox: false,
-                  checkbox: null,
+                  checkbox: true,
+                  price: 14800,
                 },
                 {
                   name: "Übertragung in Mini CI",
                   hasCheckbox: true,
-                  price: 200,
                   checkbox: false,
+                  price: 0,
+                },
+              ],
+            },
+            {
+              title: "Addons",
+              module: [
+                {
+                  name: "Product Naming",
+                  hasCheckbox: true,
+                  checkbox: false,
+                  price: 8000,
+                },
+                {
+                  name: "Product Logo",
+                  hasCheckbox: true,
+                  checkbox: false,
+                  price: 13000,
                 },
               ],
             },

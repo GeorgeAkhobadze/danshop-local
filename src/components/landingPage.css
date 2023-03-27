@@ -8,7 +8,7 @@
   width: 100%;
 }
 
-.landing-heading {
+.landing-heading > h1 {
   margin: 0px;
   text-align: center;
   font: normal normal bold 100px/128px Futura PT;
@@ -42,4 +42,12 @@
   font-size: 50px;
   padding-bottom: 15px;
   cursor: pointer;
+}
+
+.landing-heading > h1 {
+  overflow: hidden;
+}
+
+h1 > div {
+  transform: translateY(100%);
 }
