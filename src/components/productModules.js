@@ -770,7 +770,7 @@ const ProductModules = () => {
         };
         updateChangesLocal(updatedObject);
         setProduct(updatedObject);
-      } else if (product.name === "CORPORATE_DESIGN") {
+      } else if (product.name === "Corporate Design") {
         const updatedObject = {
           ...product,
           modules: [
@@ -810,56 +810,64 @@ const ProductModules = () => {
               ],
             },
             {
-              title: "Audit",
+              title: "Grundlagenwermittlung",
               module: [
                 {
-                  name: "Trend- und Benchmarkanalyse",
+                  name: "Grundlagenermittlung inkl. Kickoff (digital)",
                   hasCheckbox: false,
-                  checkbox: null,
+                  checkbox: true,
+                  price: 5400,
                 },
-                { name: "Design Audit", hasCheckbox: false, checkbox: null },
+                {
+                  name: "Analytisches Design-Audit",
+                  hasCheckbox: false,
+                  checkbox: true,
+                  price: 6300,
+                },
               ],
             },
             {
-              title: "Konzeot",
+              title: "Workshop",
               module: [
                 {
-                  name: "Creative Session",
+                  name: "Vorbereitung",
                   hasCheckbox: false,
-                  checkbox: null,
+                  checkbox: true,
+                  price: 13000,
+                  list: [
+                    "•	Methodische und Inhaltliche Vorbereitung des Workshops auf Basis und unter Berücksichtigung der Ergebnisse der Grundlagenermittlung ",
+                    "•	Erarbeitung von 2 Designrouten als Arbeitsgrundlage für den Workshop",
+                    "•	Erstellung und Aufbereitung der notwendigen Workshop-Materialien ",
+                    "•	Abstimmung des Ablaufs und der Agenda mit dem Kunden",
+                  ],
                 },
                 {
-                  name: "Visual Metaphors",
+                  name: "Durchführung",
                   hasCheckbox: false,
                   checkbox: null,
+                  list: [
+                    "•	Besprechung der Inhaltde und Learnings aus der Grundlagenermittlung",
+                    "•	Vorstellung und gemeinsame Abstimmung der Designrouten im Workshop",
+                    "•	Evaluirung der zwei vorbereiteten, unterschiedlichen Designrouten in Form und Ableitung erster Design-Entwürfe inkl. jeweils erster Anwendungsbeispiele (z.B. Visitenkarten, Print-Medien, Startseite einer Webseite)",
+                    "•	Gemeinsame Vertifung der Design-Anätze zur Festlegung der Visual-Identity",
+                    "•	Eine Korrekturschleife    ",
+                  ],
                 },
                 {
-                  name: "Abgleich Markenwerte & Brandfit",
+                  name: "Nachbereitung",
                   hasCheckbox: false,
                   checkbox: null,
-                },
-                {
-                  name: "Moodboard (digital/analog): Bildsprache / Bildwelten",
-                  hasCheckbox: false,
-                  checkbox: null,
-                },
-                {
-                  name: "3 Design Routen (Moodbards/Skizze)",
-                  hasCheckbox: false,
-                  checkbox: null,
-                },
-                {
-                  name: "Ausarbeitung 1 Route CI Logo, Design elemente, Typo, Bildsprache, Anwendungen",
-                  hasCheckbox: false,
-                  checkbox: null,
-                },
-                {
-                  name: "Überführung in Brand Book",
-                  hasCheckbox: true,
-                  checkbox: false,
-                  price: 200,
+                  list: [
+                    "•	Grafische und inhaltlich aufgearbeitete Dokumentation des Workshops und der gemeinsam erarbeiteten Ergebnisse, in Form einer Präsentation, ca. xx- xx Seiten. ",
+                  ],
                 },
               ],
+            },
+            {
+              title: "Deliverable",
+              module: [],
+              moduleNote:
+                "Zusammenfassung und Aufbereitung der im Workshop verabschiedeten markenprägenden Elemente als Basis der Ausarbeitung des Corporate Designs in Form einer Präsentation (Booklet)",
             },
             {
               title: "Allgemeine Leistungen Nachbereitung/ Dokumentation",
@@ -1355,6 +1363,9 @@ const ProductModules = () => {
               <div className="product-module-container" key={el.title}>
                 <div className="product-module-title">{el.title}</div>
                 <div className="module-list-container">
+                  <div className="module-container">
+                    <p>{el?.moduleNote}</p>
+                  </div>
                   {el?.module?.map((module, index) => {
                     if (module.hasCheckbox == true) {
                       return (

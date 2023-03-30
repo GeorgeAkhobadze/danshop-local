@@ -86,6 +86,11 @@ const ProductOverview = () => {
             <div className="product-module-container" key={modules.title}>
               <div className="product-module-title">{modules.title}</div>
               <div className="module-list-container">
+                <div className="module-container">
+                  <p>{modules?.moduleNote}</p>
+                </div>
+              </div>
+              <div className="module-list-container">
                 {modules?.module?.map((moduleItem) => {
                   return (
                     <div className="module-container">

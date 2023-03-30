@@ -79,32 +79,12 @@ const ProductCatalog = () => {
               <img src={product1Img} />
               <p className="product-name">MARKENENTWICKLUNG</p>
             </div>
-            <div className="product" onClick={() => createProduct(`NAMING`)}>
-              <img src={product2Img} />
-              <p className="product-name">NAMING</p>
-            </div>
             <div
               className="product"
-              onClick={() => createProduct(`OMNICHANNEL_KONZEPT`)}
-            >
-              <img src={product3Img} />
-              <p className="product-name">OMNICHANNEL-KONZEPT</p>
-            </div>
-          </div>
-          <div className="products-container">
-            <div
-              className="product"
-              onClick={() => createProduct(`CORPORATE_DESIGN`)}
+              onClick={() => createProduct(`Corporate Design`)}
             >
               <img src={product4Img} />
               <p className="product-name">CORPORATE DESIGN</p>
-            </div>
-            <div
-              className="product"
-              onClick={() => createProduct(`EMPLOYER_BRANDING`)}
-            >
-              <img src={product5Img} />
-              <p className="product-name">EMPLOYER BRANDING</p>
             </div>
             <div
               className="product"
@@ -113,6 +93,26 @@ const ProductCatalog = () => {
               <img src={product6Img} />
               <p className="product-name">VISIONSENTWICKLUNG</p>
             </div>
+            {/* <div className="product" onClick={() => createProduct(`NAMING`)}>
+              <img src={product2Img} />
+              <p className="product-name">NAMING</p>
+            </div> */}
+            {/* <div
+              className="product"
+              onClick={() => createProduct(`OMNICHANNEL_KONZEPT`)}
+            >
+              <img src={product3Img} />
+              <p className="product-name">OMNICHANNEL-KONZEPT</p>
+            </div> */}
+          </div>
+          <div className="products-container">
+            {/* <div
+              className="product"
+              onClick={() => createProduct(`EMPLOYER_BRANDING`)}
+            >
+              <img src={product5Img} />
+              <p className="product-name">EMPLOYER BRANDING</p>
+            </div> */}
           </div>
         </div>
         <div className="products-section-wrapper">

@@ -409,12 +409,13 @@ const PDFDocument = ({ data }) => (
                   {product?.modules?.map((modules) => {
                     return (
                       <>
+                        {console.log(modules?.moduleNote)}
                         <Text style={styles.mainModuleTitle}>
                           {modules?.title}
                         </Text>
                         <View>
                           {modules?.module?.map((moduleItem) => {
-                            console.log(moduleItem?.list);
+                            // console.log(moduleItem);
                             if (moduleItem?.checkbox != false) {
                               return (
                                 <>

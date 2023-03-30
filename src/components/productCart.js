@@ -23,7 +23,7 @@ const ProductCart = () => {
 
   useEffect(() => {
     let total = 0;
-    productList.forEach((product) => {
+    productList?.forEach((product) => {
       if (product.isInCart) {
         total += product.priceAmount;
       }
@@ -51,12 +51,20 @@ const ProductCart = () => {
                 </div>
                 <div className="module-list-container">
                   {product?.modules.map((module) => {
-                    console.log(module);
+                    console.log(module?.moduleNote);
                     return (
                       <div className="module-container module-container-cart">
                         <div className="module-heading-cart">
-                          {module.title}
+                          {module?.title}
                         </div>
+                        {module?.moduleNote && (
+                          <div>
+                            <div className="module-container">
+                              <p>{module?.moduleNote}</p>
+                            </div>
+                          </div>
+                        )}
+
                         {module?.module.map((moduleItem) => (
                           <div className="module-container">
                             <div className="module-list-bullet" />
