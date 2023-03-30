@@ -827,7 +827,7 @@ const ProductModules = () => {
               ],
             },
             {
-              title: "Workshop",
+              title: "Design-Workshop",
               module: [
                 {
                   name: "Vorbereitung",
@@ -865,9 +865,21 @@ const ProductModules = () => {
             },
             {
               title: "Deliverable",
-              module: [],
-              moduleNote:
-                "Zusammenfassung und Aufbereitung der im Workshop verabschiedeten markenprägenden Elemente als Basis der Ausarbeitung des Corporate Designs in Form einer Präsentation (Booklet)",
+              module: [
+                {
+                  name: "Aufbereitung/Zusammenfassung markenprägende Design-Elemente",
+                  hasCheckbox: false,
+                  checkbox: true,
+                  price: 8000,
+                  note: "Zusammenfassung und Aufbereitung der im Workshop verabschiedeten markenprägenden Elemente als Basis der Ausarbeitung des Corporate Designs in Form einer Präsentation (Booklet)",
+                },
+                {
+                  name: "Überführung in Brand Book",
+                  hasCheckbox: true,
+                  checkbox: false,
+                  price: 0,
+                },
+              ],
             },
             {
               title: "Allgemeine Leistungen Nachbereitung/ Dokumentation",
