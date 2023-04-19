@@ -193,6 +193,13 @@ const styles = StyleSheet.create({
     right: 60,
     fontWeight: 800,
   },
+  bottomAngebot: {
+    position: "absolute",
+    fontSize: 12,
+    bottom: 30,
+    left: 60,
+    fontWeight: 800,
+  },
   serviceDescription: {
     fontSize: 8,
     fontFamily: "Rawline",
@@ -314,6 +321,8 @@ const PDFDocumentMain = ({ data }) => {
       if(e.props.id == "terms") {}
     })
   };
+
+
   
   return(
     <Document onRender={(e) => handlePageRender(e)}>
@@ -339,7 +348,7 @@ const PDFDocumentMain = ({ data }) => {
           </View>
           <View>
             <Text style={styles.companyDate}>{data?.ortDate}</Text>
-            <Text style={styles.offerNumber}>Angebot Nr. {data?.angebot}</Text>
+            <Text style={styles.offerNumber}>Angebot Nr. {data?.danMake}</Text>
             <Text style={styles.defaultTextBold}>{data?.stuff}</Text>
           </View>
         </View>
@@ -584,11 +593,17 @@ const PDFDocumentMain = ({ data }) => {
           </View>
         </View>
       </View>
+      <View>
+        
+      </View>
       <Text
         style={[styles.pageNumber, styles.defaultText]}
         render={({ pageNumber, totalPages }) => `${pageNumber} / ${totalPages}`}
         fixed
       />
+      <Text style={[styles.bottomAngebot, styles.defaultText]} fixed>
+        Angebot Nr. {data?.danMaker}
+      </Text>
     </Page>
     <Page id="terms" size="A4" style={styles.page}>
       <View style={styles.logoContainer} fixed>
