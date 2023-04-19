@@ -126,6 +126,7 @@ const GenerateInvoice = () => {
                 className="client-default-input"
                 type="text"
                 placeholder="Angebot #"
+                value={data.angebot}
                 onChange={handleChange}
                 name="angebot"
               ></input>

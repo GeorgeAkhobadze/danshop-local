@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   Page,
   Text,
@@ -313,19 +313,33 @@ const styles = StyleSheet.create({
 
 
 const PDFDocumentMain = ({ data }) => {
+  const documentRef = useRef(null)
+
   const [secondPageCount, setSecondPageCount] = useState(0);
 
   const handlePageRender = (data) => {
-    data._INTERNAL__LAYOUT__DATA_.children.forEach((e) => {
-      console.log(e.props.id)
-      if(e.props.id == "terms") {}
+    console.log(data)
+    data.children.forEach((e) => {
+      // console.log(e)
+      // console.log(e.props.id)
+      // if(e.props.id == "terms") {
+      //   setSecondPageCount(secondPageCount + 1)
+
+      // }
     })
   };
 
+  console.log(secondPageCount)
 
-  
+  useEffect(() => {
+    handlePageRender(documentRef.current)
+
+  }, [documentRef])
+  console.log(secondPageCount)
   return(
-    <Document onRender={(e) => handlePageRender(e)}>
+    <Document 
+      ref={documentRef}
+    >
     <Page id="product" size="A4" style={styles.page}>
       <View style={styles.logoContainer} fixed>
         <Image src={logo} style={styles.logo} />
@@ -348,7 +362,7 @@ const PDFDocumentMain = ({ data }) => {
           </View>
           <View>
             <Text style={styles.companyDate}>{data?.ortDate}</Text>
-            <Text style={styles.offerNumber}>Angebot Nr. {data?.danMake}</Text>
+            <Text style={styles.offerNumber}>Angebot Nr. {data?.angebot}</Text>
             <Text style={styles.defaultTextBold}>{data?.stuff}</Text>
           </View>
         </View>
@@ -602,7 +616,7 @@ const PDFDocumentMain = ({ data }) => {
         fixed
       />
       <Text style={[styles.bottomAngebot, styles.defaultText]} fixed>
-        Angebot Nr. {data?.danMaker}
+        Angebot Nr. {data?.angebot}
       </Text>
     </Page>
     <Page id="terms" size="A4" style={styles.page}>
