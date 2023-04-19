@@ -115,55 +115,7 @@ const ProductCatalog = () => {
             </div> */}
           </div>
         </div>
-        <div className="products-section-wrapper">
-          <h3>ANGEBOTSPROZESS</h3>
-          <p>
-            Über die Pakete hast du die Möglichkeit deine Angebotsbausteine zu
-            konfigurieren und dir dein Angebot effizient individuell
-            zusammenstellen. Der Einsatz dieser Pakete wird für Passion und
-            Performance Kunden empfohlen.
-          </p>
-          <div className="products-container product-container-top">
-            <div
-              className="product"
-              onClick={() => createProduct(`MARKENENTWICKLUNG`)}
-            >
-              <img src={product1Img} />
-              <p className="product-name">BRANDING</p>
-            </div>
-            <div className="product" onClick={() => createProduct(`NAMING`)}>
-              <img src={product2Img} />
-              <p className="product-name">KEYWORD HERE</p>
-            </div>
-            <div
-              className="product"
-              onClick={() => createProduct(`OMNICHANNEL_KONZEPT`)}
-            >
-              <img src={product3Img} />
-              <p className="product-name">KEYWORD HERE</p>
-            </div>
-          </div>
-          <div className="products-container">
-            <div
-              className="product"
-              onClick={() => createProduct(`MARKENENTWICKLUNG`)}
-            >
-              <img src={product4Img} />
-              <p className="product-name">KEYWORD HERE</p>
-            </div>
-            <div className="product" onClick={() => createProduct(`NAMING`)}>
-              <img src={product5Img} />
-              <p className="product-name">KEYWORD HERE</p>
-            </div>
-            <div
-              className="product"
-              onClick={() => createProduct(`OMNICHANNEL_KONZEPT`)}
-            >
-              <img src={product6Img} />
-              <p className="product-name">KEYWORD HERE</p>
-            </div>
-          </div>
-        </div>
+
       </div>
     </>
   );

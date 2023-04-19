@@ -103,3 +103,8 @@
   font-family: "Raleway";
   cursor: pointer;
 }
+
+.submit-participants-btn:hover {
+  opacity: 0.8;
+  transition: 0.3s;
+}

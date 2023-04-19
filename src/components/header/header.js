@@ -13,7 +13,6 @@ const Header = (updated) => {
   useEffect(() => {
     let count = 0;
     products?.forEach((element) => {
-      console.log(element?.isInCart);
       if (element?.isInCart === true) {
         count += 1;
       }
@@ -22,7 +21,6 @@ const Header = (updated) => {
   }, [updated]);
 
   const handleStorageChange = (event) => {
-    console.log("woohoo");
   };
   return (
     <header className={`${location.pathname === "/" ? "header--black" : ""}`}>
@@ -42,7 +40,7 @@ const Header = (updated) => {
           <li className="header-nav__item">Einkaufskorb</li>
           <li className="header-nav__item">Support</li>
           <li className="header-nav__item" onClick={() => navigate("/cart")}>
-            {console.log(products?.length)}
+
             {products?.length > 0 && (
               <div className="header-cart-qty">{productCount}</div>
             )}

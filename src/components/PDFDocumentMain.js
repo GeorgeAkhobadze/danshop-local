@@ -303,9 +303,9 @@ const styles = StyleSheet.create({
   },
 });
 
-const PDFDocument = ({ data }) => (
+const PDFDocumentMain = ({ data }) => (
   <Document>
-    {console.log(data, "resultData")}
+    
     <Page id="hell" size="A4" style={styles.page}>
       <View style={styles.logoContainer} fixed>
         <Image src={logo} style={styles.logo} />
@@ -372,7 +372,7 @@ const PDFDocument = ({ data }) => (
         <View style={styles.serviceDefaultContainer}>
           <Text style={styles.defaultText}>{data?.introText}</Text>
         </View>
-        {console.log(data?.projektbeschreibung.length, "ITS LOGGING ME")}
+
         <View style={styles.serviceDefaultContainer}>
           <>
             <Text style={styles.defaultTextBold}>Projektbeschreibung</Text>
@@ -402,6 +402,7 @@ const PDFDocument = ({ data }) => (
                   style={styles.productTitleContainer}
                   key={`${product}-${productNumber}`}
                 >
+                  
                   <Text style={styles.defaultTextBold}>{productNumber}.</Text>
                   <Text style={styles.defaultTextBold}>{product.name}</Text>
                 </View>
@@ -409,13 +410,13 @@ const PDFDocument = ({ data }) => (
                   {product?.modules?.map((modules) => {
                     return (
                       <>
-                        {console.log(modules?.moduleNote)}
+                    
                         <Text style={styles.mainModuleTitle}>
                           {modules?.title}
                         </Text>
                         <View>
                           {modules?.module?.map((moduleItem) => {
-                            // console.log(moduleItem);
+                    
                             if (moduleItem?.checkbox != false) {
                               return (
                                 <>
@@ -1081,4 +1082,4 @@ const PDFDocument = ({ data }) => (
   </Document>
 );
 
-export default PDFDocument;
+export default PDFDocumentMain;

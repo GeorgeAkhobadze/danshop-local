@@ -1,9 +1,9 @@
 import { PDFDownloadLink, PDFViewer } from "@react-pdf/renderer";
 import { useEffect, useState } from "react";
 import Header from "./header/header";
-import PDFDocument from "./PDFDocument";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import PDFDocumentMain from "./PDFDocumentMain";
 
 const GenerateInvoice = () => {
   const [isButton1Clicked, setIsButton1Clicked] = useState(false);
@@ -250,7 +250,7 @@ const GenerateInvoice = () => {
 
         <PDFDownloadLink
           className="generate-pdf-btn"
-          document={<PDFDocument data={data} />}
+          document={<PDFDocumentMain data={data} />}
           fileName="somename.pdf"
         >
           {({ blob, url, loading, error }) =>

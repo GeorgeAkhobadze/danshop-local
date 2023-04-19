@@ -130,6 +130,10 @@
   cursor: pointer;
 }
 
+.button-next:hover {
+  opacity: 0.8;
+}
+
 .button-back {
   padding: 1rem 3rem;
   background-color: transparent;
@@ -139,6 +143,10 @@
   font-family: "Raleway";
   font-size: 4.3rem;
   cursor: pointer;
+}
+
+.button-back:hover {
+  opacity: 0.8;
 }
 
 .modal-container {

@@ -134,6 +134,10 @@
   text-decoration: none;
 }
 
+.generate-pdf-btn:hover {
+  opacity: 0.8;
+}
+
 .service-section {
   display: flex;
   flex-direction: column;

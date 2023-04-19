@@ -28,6 +28,11 @@
   position: relative;
 }
 
+.product:hover {
+  opacity: 0.8!important;
+  transition: 0.3s;
+}
+
 .product-name {
   padding: 5.4rem 0rem 5rem 0rem;
   background-color: #ffffff52;

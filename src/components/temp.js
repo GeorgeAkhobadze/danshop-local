@@ -261,7 +261,7 @@ const temp = () => {
               disabled={!isButton1Clicked}
               onClick={() => setIsButton2Clicked(true)}
               className="generate-pdf-btn"
-              document={<PDFDocument data={data} />}
+              document={<PDFDocumentMain data={data} />}
               fileName="somename.pdf"
             >
               {({ blob, url, loading, error }) =>

@@ -41,6 +41,10 @@
   margin-bottom: 18rem;
 }
 
+.generate-invoice-btn:hover {
+  opacity: 0.8;
+}
+
 .remove-product-btn {
   align-self: flex-end;
   background: transparent;

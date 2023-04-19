@@ -41,6 +41,10 @@
   cursor: pointer;
 }
 
+.company-card:hover img {
+  opacity: 0.8!important;
+}
+
 .company-card img {
   width: 100%;
 }
