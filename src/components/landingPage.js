@@ -11,6 +11,7 @@ const LandingPage = () => {
     gsap.to(".landing-heading-div", {
       duration: 0.5,
       y: 0,
+      opacity: 1,
       stagger: 0.3,
       delay: 0.7,
     });

@@ -130,8 +130,15 @@
   display: none;
 }
 
+.landing-heading-div {
+line-height: 10rem;
+}
+
+
 .landing-heading > h2 {
   overflow: hidden;
+  height: 80px;
+
 }
 
 h2 > div {

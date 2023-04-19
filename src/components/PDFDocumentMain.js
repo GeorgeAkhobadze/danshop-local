@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Page,
   Text,
@@ -303,10 +303,21 @@ const styles = StyleSheet.create({
   },
 });
 
-const PDFDocumentMain = ({ data }) => (
-  <Document>
-    
-    <Page id="hell" size="A4" style={styles.page}>
+
+
+const PDFDocumentMain = ({ data }) => {
+  const [secondPageCount, setSecondPageCount] = useState(0);
+
+  const handlePageRender = (data) => {
+    data._INTERNAL__LAYOUT__DATA_.children.forEach((e) => {
+      console.log(e.props.id)
+      if(e.props.id == "terms") {}
+    })
+  };
+  
+  return(
+    <Document onRender={(e) => handlePageRender(e)}>
+    <Page id="product" size="A4" style={styles.page}>
       <View style={styles.logoContainer} fixed>
         <Image src={logo} style={styles.logo} />
       </View>
@@ -579,7 +590,7 @@ const PDFDocumentMain = ({ data }) => (
         fixed
       />
     </Page>
-    <Page size="A4" style={styles.page}>
+    <Page id="terms" size="A4" style={styles.page}>
       <View style={styles.logoContainer} fixed>
         <Image src={logo} style={styles.logo} />
       </View>
@@ -1080,6 +1091,9 @@ const PDFDocumentMain = ({ data }) => (
       />
     </Page>
   </Document>
-);
+
+  )
+
+            };
 
 export default PDFDocumentMain;
