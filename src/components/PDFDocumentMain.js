@@ -337,10 +337,8 @@ const PDFDocumentMain = ({ data }) => {
   }, [documentRef])
   console.log(secondPageCount)
   return(
-    <Document 
-      ref={documentRef}
-    >
-    <Page id="product" size="A4" style={styles.page}>
+    <Document>
+    <Page id="product" size="A4" style={styles.page} ref={documentRef}>
       <View style={styles.logoContainer} fixed>
         <Image src={logo} style={styles.logo} />
       </View>

@@ -50,7 +50,8 @@ const ProductType = () => {
     // const myObject = JSON.parse(localStorage.getItem("products"))[productId];
     if (
       myObject?.name === "MARKENENTWICKLUNG" ||
-      myObject?.name === "VISIONSENTWICKLUNG"
+      myObject?.name === "VISIONSENTWICKLUNG" ||
+      myObject?.name === "Corporate Design"
     ) {
       setPage(2);
     }
