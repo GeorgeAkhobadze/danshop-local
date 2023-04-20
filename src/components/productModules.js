@@ -1146,7 +1146,7 @@ const ProductModules = () => {
                   checkbox: true,
                   price: 9500,
                   list: [
-                    "•	Grundlagenermittlung, inkl. Einholung, Sichtung und Auswertung aller vom Kd. zu Verfügung gestellten (Planungs-) Unterlagen, inkl. Konzeptansätze des ggf. involvierten Architekturbüros",
+                    "•  Grundlagenermittlung, inkl. Einholung, Sichtung und Auswertung aller vom Kd. zu Verfügung gestellten (Planungs-) Unterlagen, inkl. Konzeptansätze des ggf. involvierten Architekturbüros",
                     "•	Erarbeitung des Status Quo und der Rahmenbedingungen des Projektes",
                     "•	Begehung des Ortes und der Umgebung zum eingehenden Verständnis der örtlichen Ausgangssituation",
                     "•	Betrachtung der Status Quo der Außenkommunikation über das Projekt",
