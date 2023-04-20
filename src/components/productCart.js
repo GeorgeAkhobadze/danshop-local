@@ -66,7 +66,7 @@ const ProductCart = () => {
                         )}
 
                         {module?.module.map((moduleItem) => (
-                          <div className="module-container" title={moduleItem?.list?.join('\n')}>
+                          <div className="module-container" title={moduleItem?.list ? moduleItem?.list?.join('\n') : moduleItem.name}>
                             <div className="module-list-bullet"  />
                             <p>{moduleItem.name}</p>
                           </div>

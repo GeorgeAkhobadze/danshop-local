@@ -1384,8 +1384,10 @@ const ProductModules = () => {
                         <label
                           className="module-checkbox-container"
                           key={module.name}
+                          title={module?.list ? module?.list?.join('\n') : module.name}
                         >
                           <input
+                          
                             type="checkbox"
                             name={module.name}
                             onClick={(e) =>
@@ -1398,7 +1400,7 @@ const ProductModules = () => {
                       );
                     } else {
                       return (
-                        <div className="module-container">
+                        <div className="module-container" title={module?.list ? module?.list?.join('\n') : module.name}>
                           <div className="module-list-bullet" />
                           <p key={module.name}>{module.name}</p>
                         </div>

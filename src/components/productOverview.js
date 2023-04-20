@@ -93,7 +93,7 @@ const ProductOverview = () => {
               <div className="module-list-container">
                 {modules?.module?.map((moduleItem) => {
                   return (
-                    <div className="module-container">
+                    <div className="module-container" title={moduleItem?.list ? moduleItem?.list?.join('\n') : moduleItem.name}>
                       <div className="module-list-bullet" />
                       <p>{moduleItem?.name}</p>
                     </div>
