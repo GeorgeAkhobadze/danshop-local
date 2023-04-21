@@ -449,7 +449,7 @@ const PDFDocumentMain = ({ data }) => {
                         <View>
                           {modules?.module?.map((moduleItem) => {
                     
-                            if (moduleItem?.checkbox != false) {
+                            if (moduleItem?.checkbox !== false) {
                               return (
                                 <>
                                   <View style={styles.bulletPoint}>
@@ -459,7 +459,7 @@ const PDFDocumentMain = ({ data }) => {
                                       </Text>
                                     </View>
                                     <Text style={styles.defaultText}>
-                                      {moduleItem?.name}
+                                      {moduleItem?.hasInput ? moduleItem.interviewValue : moduleItem?.name}
                                     </Text>
                                   </View>
                                   {moduleItem?.note ? (

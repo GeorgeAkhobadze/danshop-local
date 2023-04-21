@@ -94,6 +94,24 @@ const ProductModules = () => {
                     "• Daraus ableiten von Positionierungsabsätzen und Alleistellungsmerkmal für den Workshop",
                   ],
                 },
+                {
+                  name: 'Nutzerinterviews',
+                  hasCheckbox: true,
+                  price: 0,
+                  hasInput: true,
+                  checkbox: false,
+                  interviewValue: '4 Nutzerinterviews',
+                  interviewCount: [4, 6, 8]
+                },
+                {
+                  name: 'Stakeholderinterviews',
+                  hasCheckbox: true,
+                  price: 0,
+                  hasInput: true,
+                  checkbox: false,
+                  interviewValue: '3 Stakeholderinterviews',
+                  interviewCount: [3, 5, 10]
+                }
               ],
             },
             {
@@ -1180,6 +1198,15 @@ const ProductModules = () => {
                   price: 0,
                   checkbox: false,
                 },
+                {
+                  name: 'Nutzerinterviews',
+                  hasCheckbox: true,
+                  price: 0,
+                  hasInput: true,
+                  checkbox: false,
+                  interviewValue: '4 Nutzerinterviews',
+                  interviewCount: [4, 6, 8]
+                },
               ],
             },
             {
@@ -1311,6 +1338,7 @@ const ProductModules = () => {
   }, []);
 
   const handleCheckbox = (e, index, moduleTitle, elIndex) => {
+    console.log(elIndex, e.target.name, e.target.checked, 'this my sht')
     const updatedModules = product?.modules.map((el, i) => {
       if (i !== elIndex) {
         return el;
@@ -1318,7 +1346,7 @@ const ProductModules = () => {
       const updatedModule = el?.module?.map((object) => {
         if (object.name === e.target.name) {
           return { ...object, checkbox: e.target.checked };
-        }
+        } 
         return object;
       });
       return { ...el, module: updatedModule };
@@ -1327,9 +1355,26 @@ const ProductModules = () => {
     setProduct({ ...product, modules: updatedModules });
   };
 
+  const handleSelect = (e, elIndex) => {
+    console.log(e, elIndex)
+    const updatedModules = product?.modules.map((el, i) => {
+      if (i !== elIndex) {
+        return el;
+      }
+      const updatedModule = el?.module?.map((object) => {
+        if (object.name === e.target.name) {
+          return { ...object, interviewValue: e.target.value };
+        }
+        return object;
+      });
+      return { ...el, module: updatedModule };
+    });
+    updateChangesLocal({ ...product, modules: updatedModules });
+    setProduct({ ...product, modules: updatedModules });
+  }
+
   const [modulesPrice, setModulesPrice] = useState();
   useEffect(() => {
-    console.log("THIS IS ME PRODUCTING");
     let modulesPrice = 0;
     console.log(
       product?.priceAmount,
@@ -1358,6 +1403,10 @@ const ProductModules = () => {
         product?.workshop.moderatorPrice,
     });
   }, [product]);
+
+  useEffect(() => {
+
+  }, [])
   return (
     <>
       <Header />
@@ -1380,14 +1429,14 @@ const ProductModules = () => {
                   </div>
                   {el?.module?.map((module, index) => {
                     if (module.hasCheckbox == true) {
-                      return (
-                        <label
+                      if(module?.hasInput) {
+                        return(
+                          <label
                           className="module-checkbox-container"
                           key={module.name}
                           title={module?.list ? module?.list?.join('\n') : module.name}
                         >
-                          <input
-                          
+                            <input
                             type="checkbox"
                             name={module.name}
                             onClick={(e) =>
@@ -1395,10 +1444,45 @@ const ProductModules = () => {
                             }
                             checked={module.checkbox}
                           />
-                          {module.name}
-                        </label>
-                      );
-                    } else {
+                          <select className="module-select-input" disabled={!module.checkbox} name={module.name} onChange={(e) => handleSelect(e, elIndex)}>
+                          {module.interviewCount.map((e) => {
+  const optionValue = `${e} ${module.name}`;
+  return (
+    <option
+      value={optionValue}
+      selected={optionValue === module.interviewValue}
+    >
+      {optionValue}
+    </option>
+  );
+})}
+
+                          </select>
+                          </label>
+
+                        )
+                      } else {
+                        return (
+                          <label
+                            className="module-checkbox-container"
+                            key={module.name}
+                            title={module?.list ? module?.list?.join('\n') : module.name}
+                          >
+                            <input
+                            
+                              type="checkbox"
+                              name={module.name}
+                              onClick={(e) =>
+                                handleCheckbox(e, index, el.title, elIndex)
+                              }
+                              checked={module.checkbox}
+                            />
+                            {module.name}
+                          </label>
+                        );
+                      }
+
+                    }  else {
                       return (
                         <div className="module-container" title={module?.list ? module?.list?.join('\n') : module.name}>
                           <div className="module-list-bullet" />

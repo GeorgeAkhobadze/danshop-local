@@ -65,12 +65,16 @@ const ProductCart = () => {
                           </div>
                         )}
 
-                        {module?.module.map((moduleItem) => (
-                          <div className="module-container" title={moduleItem?.list ? moduleItem?.list?.join('\n') : moduleItem.name}>
-                            <div className="module-list-bullet"  />
-                            <p>{moduleItem.name}</p>
-                          </div>
-                        ))}
+                {module?.module?.map((moduleItem) => {
+                  if(moduleItem.checkbox !== false) {
+                    return(
+                    <div className="module-container" title={moduleItem?.list ? moduleItem?.list?.join('\n') : moduleItem.name}>
+                    <div className="module-list-bullet" />
+                    {moduleItem?.hasInput ? <p>{moduleItem.interviewValue}</p> : <p>{moduleItem.name}</p>}
+                  </div>
+                    )
+                  }
+                })}
                       </div>
                     );
                   })}

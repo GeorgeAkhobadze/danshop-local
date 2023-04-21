@@ -8,6 +8,13 @@
   gap: 11.2rem;
 }
 
+.module-select-input {
+  font-size: 3rem;
+  padding: 7px 10px;
+  width: 40rem;
+  font-family: "Raleway";
+}
+
 .product-module-container {
   width: 100%;
   display: flex;
