@@ -17,6 +17,14 @@
   object-fit: cover;
 }
 
+.custmertype-card-product {
+  height: auto !important;
+}
+
+.customertype-product-1 {
+  background-image: url("/src/assets/markenentwicklung-product-img.jpg") !important;
+}
+
 .product-catalog-hero--blur {
   position: absolute;
   top: 0;
@@ -66,6 +74,38 @@
   font-family: "Raleway";
   font-size: 3rem;
   margin-bottom: 9rem;
+}
+
+.product-text-description {
+  font-size: 2.6rem !important;
+}
+
+.product-card-1 {
+  background-image: url("/src/assets/markenentwicklung-product-img.jpg");
+}
+
+.product-card-2 {
+  background-image: url("/src/assets/corporatedesign-product-img.jpg");
+}
+
+.product-card-3 {
+  background-image: url("/src/assets/audit-product-img.jpg");
+}
+
+.product-card-4 {
+  background-image: url("/src/assets/omnichannelkonzept-product-img.jpg");
+}
+
+.product-card-5 {
+  background-image: url("/src/assets/employerbranding-product-img.jpg");
+}
+
+.product-card-6 {
+  background-image: url("/src/assets/naming-product-img.jpg");
+}
+
+.company-list-product {
+  margin: 3.5rem 0 !important;
 }
 
 .participant-input {

@@ -252,7 +252,7 @@ const GenerateInvoice = () => {
         <PDFDownloadLink
           className="generate-pdf-btn"
           document={<PDFDocumentMain data={data} />}
-          fileName="somename.pdf"
+          fileName="Angebot_Dan_Pearlman.pdf"
         >
           {({ blob, url, loading, error }) =>
             loading ? "Loading document..." : "Generate PDF"

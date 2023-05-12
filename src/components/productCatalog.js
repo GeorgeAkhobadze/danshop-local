@@ -72,7 +72,7 @@ const ProductCatalog = () => {
             lieben Prozesssicherheit und diese wollen wir ihnen geben.
           </div>
         </div>
-        <div className="products-section-wrapper products-section-wrapper--top">
+        <div className="products-section-wrapper products-section-wrapper--top ">
           <h3>PRODUKTE</h3>
           <p>
             Über die Pakete hast du die Möglichkeit deine Angebotsbausteine zu
@@ -80,62 +80,114 @@ const ProductCatalog = () => {
             zusammenstellen. Der Einsatz dieser Pakete wird für Passion und
             Performance Kunden empfohlen.
           </p>
-          <div className="products-container product-container-top">
-            <div
-              className="product"
-              onClick={() => createProduct(`MARKENENTWICKLUNG`)}
-            >
-              <img src={product1Img} />
-              <p className="product-name">MARKENENTWICKLUNG</p>
+          <div className="company-list ">
+              <div
+                onClick={() => createProduct("MARKENENTWICKLUNG")}
+                className="customertype-card product-card-1"
+              >
+                <div className="customertype-text-container">
+                  <p className="customertype-text-title">MARKENENTWICKLUNG</p>
+                  <p className="customertype-text-description  product-text-description ">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+                  </p>
+                </div>
+              </div>
+              <div
+                onClick={() => createProduct("Corporate Design")}
+                className="customertype-card product-card-2"
+              >
+                {" "}
+                <div className="customertype-text-container">
+                  <p className="customertype-text-title">CORPORATE DESIGN</p>
+                  <p className="customertype-text-description product-text-description">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+                  </p>
+                </div>
+              </div>
+              <div
+                onClick={() => createProduct("VISIONSENTWICKLUNG")}
+                className="customertype-card product-card-3"
+              >
+                <div className="customertype-text-container">
+                  <p className="customertype-text-title">VISIONSENTWICKLUNG</p>
+                  <p className="customertype-text-description product-text-description">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+                  </p>
+                </div>
+              </div>
             </div>
-            <div
-              className="product"
-              onClick={() => createProduct(`Corporate Design`)}
-            >
-              <img src={product4Img} />
-              <p className="product-name">CORPORATE DESIGN</p>
+            <div className="company-list company-list-product">
+              <div
+                onClick={() => createProduct(`SCOPING_WORKSHOP`)}
+                className="customertype-card product-card-4"
+              >
+                <div className="customertype-text-container">
+                  <p className="customertype-text-title">SCOPING-WORKSHOP</p>
+                  <p className="customertype-text-description  product-text-description ">
+
+                  - Eine Beschreibung & Analyse des Status Quo
+<br/>
+                  - Eine Sammlung & Beschreibung aller relevanten Stakeholder
+                  <br/>
+- Eine SWOT-Analyse um mögliche Potenziale und Herausforderungen zu identifizieren
+<br/>
+- Beschreibung & Analyse möglicher Handlungsfelder
+<br/>
+- Überführung der Ergebnisse in konkrete Next Steps
+                  </p>
+                </div>
+              </div>
+              <div
+                onClick={() => createProduct(`VISIONS_WORKSHOP`)}
+                className="customertype-card product-card-5"
+              >
+                {" "}
+                <div className="customertype-text-container">
+                  <p className="customertype-text-title">VISIONS-WORKSHOP</p>
+                  <p className="customertype-text-description product-text-description">
+
+                  - Diskussion der Wettbewerbsanalyse
+<br/>
+- Diskussion der Bedürfnissanalyse
+
+<br/>
+
+--> HINWEIS TILMAN: Wettbewerb & Stakeholderanalyse als optionale Produkte
+
+<br/>
+
+- Erarbeitung eines Nutzenversprechens
+<br/>
+-Erarbeitung möglicher Ansätze für einen Nutzungsmix
+<br/>
+- Formulierung & Verabschiedung Vision
+                  </p>
+                </div>
+              </div>
+              <div
+                onClick={() => createProduct(`INNOVATIONS_WORKSHOP`)}
+                className="customertype-card product-card-6"
+              >
+                <div className="customertype-text-container">
+                  <p className="customertype-text-title">INNOVATIONS-WORKSHOP</p>
+                  <p className="customertype-text-description product-text-description">
+
+                  - Eine Analyse des Status Quo und Formulierung einer Design Challenge
+<br/>
+- Ideation Sprints
+<br/>
+- Impact Analyse
+<br/>
+- Beschreibung & Analyse möglicher Handlungsfelder
+<br/>
+- Überführung der Ergebnisse in konkrete Next Steps
+                  </p>
+                </div>
+              </div>
             </div>
-            <div
-              className="product"
-              onClick={() => createProduct(`VISIONSENTWICKLUNG`)}
-            >
-              <img src={product6Img} />
-              <p className="product-name">VISIONSENTWICKLUNG</p>
-            </div>
-            {/* <div className="product" onClick={() => createProduct(`NAMING`)}>
-              <img src={product2Img} />
-              <p className="product-name">NAMING</p>
-            </div> */}
-            {/* <div
-              className="product"
-              onClick={() => createProduct(`OMNICHANNEL_KONZEPT`)}
-            >
-              <img src={product3Img} />
-              <p className="product-name">OMNICHANNEL-KONZEPT</p>
-            </div> */}
-          </div>
+
           <div className="products-container">
-            <div
-              className="product"
-              onClick={() => createProduct(`SCOPING_WORKSHOP`)}
-            >
-              <img src={product3Img} />
-              <p className="product-name">SCOPING-WORKSHOP</p>
-            </div>
-            <div
-              className="product"
-              onClick={() => createProduct(`VISIONS_WORKSHOP`)}
-            >
-              <img src={product5Img} />
-              <p className="product-name">VISIONS-WORKSHOP</p>
-            </div>
-            <div
-              className="product"
-              onClick={() => createProduct(`INNOVATIONS_WORKSHOP`)}
-            >
-              <img src={product2Img} />
-              <p className="product-name">INNOVATIONS-WORKSHOP</p>
-            </div>
+
           </div>
         </div>
 
