@@ -43,15 +43,17 @@ const ProductType = () => {
         `/${updatedProduct?.name}/${updatedProduct?.workshop.workshopType}/${updatedProduct?.id}/location`
       );
     }
-    console.log(myObject);
   };
 
   useEffect(() => {
-    // const myObject = JSON.parse(localStorage.getItem("products"))[productId];
+    console.log(myObject)
     if (
       myObject?.name === "MARKENENTWICKLUNG" ||
       myObject?.name === "VISIONSENTWICKLUNG" ||
-      myObject?.name === "Corporate Design"
+      myObject?.name === "Corporate Design" ||
+      myObject?.name === "SCOPING_WORKSHOP" ||
+      myObject?.name === "VISIONS_WORKSHOP" ||
+      myObject?.name === "INNOVATIONS_WORKSHOP"
     ) {
       setPage(2);
     }

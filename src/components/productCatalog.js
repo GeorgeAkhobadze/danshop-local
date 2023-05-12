@@ -28,6 +28,14 @@ const ProductCatalog = () => {
       localStorage.setItem("products", JSON.stringify([]));
     }
     const existingObject = JSON.parse(localStorage.getItem("products"));
+    let price = 5000
+    if(product == "SCOPING_WORKSHOP") {
+      price = 8500
+    } else if(product == "VISIONS_WORKSHOP") {
+      price = 13000
+    } else if(product == "INNOVATIONS_WORKSHOP") {
+      price = 14000
+    }
     const newObject = {
       id: `${Object.keys(existingObject)?.length}`,
       name: `${product}`,
@@ -41,8 +49,9 @@ const ProductCatalog = () => {
       modules: [{}],
       catering: {},
       teamBuilding: {},
-      priceAmount: 5000,
+      priceAmount: price,
       isInCart: false,
+     
     };
     existingObject.push(newObject);
     localStorage.setItem("products", JSON.stringify(existingObject));
@@ -106,13 +115,27 @@ const ProductCatalog = () => {
             </div> */}
           </div>
           <div className="products-container">
-            {/* <div
+            <div
               className="product"
-              onClick={() => createProduct(`EMPLOYER_BRANDING`)}
+              onClick={() => createProduct(`SCOPING_WORKSHOP`)}
+            >
+              <img src={product3Img} />
+              <p className="product-name">SCOPING-WORKSHOP</p>
+            </div>
+            <div
+              className="product"
+              onClick={() => createProduct(`VISIONS_WORKSHOP`)}
             >
               <img src={product5Img} />
-              <p className="product-name">EMPLOYER BRANDING</p>
-            </div> */}
+              <p className="product-name">VISIONS-WORKSHOP</p>
+            </div>
+            <div
+              className="product"
+              onClick={() => createProduct(`INNOVATIONS_WORKSHOP`)}
+            >
+              <img src={product2Img} />
+              <p className="product-name">INNOVATIONS-WORKSHOP</p>
+            </div>
           </div>
         </div>
 

@@ -1331,6 +1331,250 @@ const ProductModules = () => {
         };
         updateChangesLocal(updatedObject);
         setProduct(updatedObject);
+      } else if(product.name === "SCOPING_WORKSHOP") {
+        const updatedObject = {
+          ...product,
+          modules: [
+            {
+              title: "Scoping-Workshop",
+              module: [
+                {
+                  name: "Gemeinsame Definition des Ergebnisses des Gesamtprozesses sowie der einzelnen Prozessschritte und der jeweiligen Deliverables sowie deren schriftliche Festsetzung",
+                  hasCheckbox: false,
+                  checkbox: true,
+                  price: 0,
+                },
+                {
+                  name: "Erarbeitung eines detaillierten Briefing Dokuments aller Leistungen inkl. Beschreibung des Leistungsumfangs",
+                  hasCheckbox: false,
+                  checkbox: true,
+                  price: 0,
+                },
+                {
+                  name: "Festlegung der Zielsetzung des Projektes inkl. Timing",
+                  hasCheckbox: false,
+                  checkbox: true,
+                  price: 0,
+                },
+                {
+                  name: "Festlegung der Chancen und Risiken des Projekts",
+                  hasCheckbox: false,
+                  checkbox: true,
+                  price: 0,
+                },
+              ],
+            },
+            {
+              title: "Deliverable",
+              module: [
+                {
+                  name: "Aufbereitung der Analyse & Ausgefüllter Gameplan",
+                  hasCheckbox: false,
+                  checkbox: true,
+                  price: 0,
+                },
+                {
+                  name: "Definition von Handlungsfelder",
+                  hasCheckbox: false,
+                  checkbox: true,
+                  price: 0,
+                },
+                {
+                  name: "Abgestimmte Benchmark-Kategorien, Wettbewerscluster, Nutzergruppen",
+                  hasCheckbox: false,
+                  checkbox: true,
+                  price: 0,
+                },
+              ],
+            }
+          ],
+        };
+        updateChangesLocal(updatedObject);
+        setProduct(updatedObject);
+      } else if(product.name === "VISIONS_WORKSHOP") {
+        const updatedObject = {
+          ...product,
+          modules: [
+            {
+              title: "Workshopvorbeireitung",
+              module: [
+                {
+                  name: "Mini-Kick-Off mit Kunden",
+                  hasCheckbox: false,
+                  checkbox: true,
+                  price: 0,
+                },
+                {
+                  name: "Sichtung Input der Kundenunterlagen",
+                  hasCheckbox: false,
+                  checkbox: true,
+                  price: 0,
+                },
+                {
+                  name: "Mini Benchmark Input: relevante Trends & Benchmarks",
+                  hasCheckbox: false,
+                  checkbox: true,
+                  price: 0,
+                },
+                {
+                  name: "Benchmark Input: relevante Trends & Benchmarks",
+                  hasCheckbox: true,
+                  checkbox: false,
+                  price: 5200,
+                },
+                {
+                  name: "Wettbewerbs-Analyse: relevante Wettbewerber sichten & aufbereiten",
+                  hasCheckbox: true,
+                  checkbox: false,
+                  price: 5200,
+                },
+              ],
+            },
+            {
+              title: "Visions-Workshop",
+              module: [
+                {
+                  name: "Auswahl & Vorbereitung geeigneter Methoden und Formate (Brainstorming, Ideation, Prototyping...)",
+                  hasCheckbox: false,
+                  checkbox: true,
+                  price: 0,
+                },
+                {
+                  name: "Erarbeitung einer Wettbewerbspositionierung",
+                  hasCheckbox: false,
+                  checkbox: true,
+                  price: 0,
+                },
+                {
+                  name: "Erarbeitung eines Nutzenversprechen / USP",
+                  hasCheckbox: false,
+                  checkbox: true,
+                  price: 0,
+                },
+                {
+                  name: "Erarbeitung einer Projektvision",
+                  hasCheckbox: false,
+                  checkbox: true,
+                  price: 0,
+                },
+              ],
+            },
+            {
+              title: "Deliverable",
+              module: [
+                {
+                  name: "Analytische Aufbereitung des Workshops",
+                  hasCheckbox: false,
+                  checkbox: true,
+                  price: 0,
+                },
+                {
+                  name: "Ausformuliertes Nutzenversprechen & übergreifende Projektvision",
+                  hasCheckbox: false,
+                  checkbox: true,
+                  price: 0,
+                },
+              ],
+            }
+          ],
+        };
+        updateChangesLocal(updatedObject);
+        setProduct(updatedObject);
+      }else if(product.name === "INNOVATIONS_WORKSHOP") {
+        const updatedObject = {
+          ...product,
+          modules: [
+            {
+              title: "Workshopvorbeireitung",
+              module: [
+                {
+                  name: "Mini-Kick-Off mit Kunden",
+                  hasCheckbox: false,
+                  checkbox: true,
+                  price: 0,
+                },
+                {
+                  name: "Sichtung Input der Kundenunterlagen",
+                  hasCheckbox: false,
+                  checkbox: true,
+                  price: 0,
+                },
+                {
+                  name: "Benchmark Input: relevante Trends & Benchmarks",
+                  hasCheckbox: false,
+                  checkbox: false,
+                  price: 0,
+                },
+                {
+                  name: "Wettbewerbs-Analyse: relevante Wettbewerber sichten & aufbereiten",
+                  hasCheckbox: false,
+                  checkbox: false,
+                  price: 0,
+                },
+              ],
+            },
+            {
+              title: "Innovations-Workshop",
+              module: [
+                {
+                  name: "Moderation des Workshops und Teilnahme von dan pearlman Experten",
+                  hasCheckbox: false,
+                  checkbox: true,
+                  price: 0,
+                },
+                {
+                  name: "Vorstellung der Ergebnisse und Recherche innerhalb der Grundlagenermittlung",
+                  hasCheckbox: false,
+                  checkbox: true,
+                  price: 0,
+                },
+                {
+                  name: `Gemeinsame Ideenfindung für neue Dienstleistungen, Produkte und Geschäftsmodelle aus einer "Out-of-the-Box"-Perspektive Prototyping, Ideation, Brainstorming, Opportunity Mapping...`,
+                  hasCheckbox: false,
+                  checkbox: true,
+                  price: 0,
+                },
+                {
+                  name: "Diskussion und Identifikation potenzieller Handlungsfelder",
+                  hasCheckbox: false,
+                  checkbox: true,
+                  price: 0,
+                },
+                {
+                  name: "Diskussion und Verabschiedung der Nutzergruppen-Personas und den jeweiligen Bedürfnissen",
+                  hasCheckbox: false,
+                  checkbox: true,
+                  price: 0,
+                },
+              ],
+            },
+            {
+              title: "Deliverable",
+              module: [
+                {
+                  name: "Analytische Aufbereitung des Workshops",
+                  hasCheckbox: false,
+                  checkbox: true,
+                  price: 0,
+                },
+                {
+                  name: "Ausblick und Definition weiterer anschließender Handlungsfelder",
+                  hasCheckbox: false,
+                  checkbox: true,
+                  price: 0,
+                },
+                {
+                  name: "Aufbereitete & Priorisierte Prototypes / Idea Napkins",
+                  hasCheckbox: false,
+                  checkbox: true,
+                  price: 0,
+                },
+              ],
+            }
+          ],
+        };
+        updateChangesLocal(updatedObject);
+        setProduct(updatedObject);
       } else {
         return;
       }

@@ -262,7 +262,7 @@ const temp = () => {
               onClick={() => setIsButton2Clicked(true)}
               className="generate-pdf-btn"
               document={<PDFDocumentMain data={data} />}
-              fileName="somename.pdf"
+              fileName="DanPearlman.pdf"
             >
               {({ blob, url, loading, error }) =>
                 loading ? "Loading document..." : "Generate PDF"

@@ -91,6 +91,7 @@ const CompanyList = () => {
               >
                 <img src={company5} />
               </div>
+              
             </div>
           </>
         )}
