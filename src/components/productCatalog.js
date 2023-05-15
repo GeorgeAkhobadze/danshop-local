@@ -23,7 +23,7 @@ const ProductCatalog = () => {
     }
   }, []);
 
-  const createProduct = (product) => {
+  const createProduct = (product, description) => {
     if (products === null) {
       localStorage.setItem("products", JSON.stringify([]));
     }
@@ -51,7 +51,7 @@ const ProductCatalog = () => {
       teamBuilding: {},
       priceAmount: price,
       isInCart: false,
-     
+     description: description,
     };
     existingObject.push(newObject);
     localStorage.setItem("products", JSON.stringify(existingObject));
@@ -82,105 +82,73 @@ const ProductCatalog = () => {
           </p>
           <div className="company-list ">
               <div
-                onClick={() => createProduct("MARKENENTWICKLUNG")}
+                onClick={() => createProduct("MARKENENTWICKLUNG", "Ausgehend von einer Positionierung im Wettbewerbsumfeld entwicklen wir im Rahmen eines kollaborativen Workshops eine starke und einzigartige Marke zur Vermarktung")}
                 className="customertype-card product-card-1"
               >
                 <div className="customertype-text-container">
                   <p className="customertype-text-title">MARKENENTWICKLUNG</p>
                   <p className="customertype-text-description  product-text-description ">
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+                  Ausgehend von einer Positionierung im Wettbewerbsumfeld entwicklen wir im Rahmen eines kollaborativen Workshops eine starke und einzigartige Marke zur Vermarktung
                   </p>
                 </div>
               </div>
               <div
-                onClick={() => createProduct("Corporate Design")}
+                onClick={() => createProduct("Corporate Design", "Wir entwickeln eine Corporate Identity & Design um die Marke mit Leben zu füllen und ihr ein Gesicht zu geben. ")}
                 className="customertype-card product-card-2"
               >
                 {" "}
                 <div className="customertype-text-container">
                   <p className="customertype-text-title">CORPORATE DESIGN</p>
                   <p className="customertype-text-description product-text-description">
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+                  Wir entwickeln eine Corporate Identity & Design um die Marke mit Leben zu füllen und ihr ein Gesicht zu geben. 
                   </p>
                 </div>
               </div>
               <div
-                onClick={() => createProduct("VISIONSENTWICKLUNG")}
+                onClick={() => createProduct("VISIONSENTWICKLUNG", "Wir entwickeln im Rahmen eines kollaborativen Workshops eine Vision als zukünftiger Kompass für das Projekt.")}
                 className="customertype-card product-card-3"
               >
                 <div className="customertype-text-container">
                   <p className="customertype-text-title">VISIONSENTWICKLUNG</p>
                   <p className="customertype-text-description product-text-description">
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+                  Wir entwickeln im Rahmen eines kollaborativen Workshops eine Vision als zukünftiger Kompass für das Projekt.
                   </p>
                 </div>
               </div>
             </div>
             <div className="company-list company-list-product">
               <div
-                onClick={() => createProduct(`SCOPING_WORKSHOP`)}
+                onClick={() => createProduct(`SCOPING_WORKSHOP`, "Ziel des Scoping Workshops ist es gemeinsam das Feld zu sichten und zu analysieren.")}
                 className="customertype-card product-card-4"
               >
                 <div className="customertype-text-container">
                   <p className="customertype-text-title">SCOPING-WORKSHOP</p>
                   <p className="customertype-text-description  product-text-description ">
+                  Ziel des Scoping Workshops ist es gemeinsam das Feld zu sichten und zu analysieren.
 
-                  - Eine Beschreibung & Analyse des Status Quo
-<br/>
-                  - Eine Sammlung & Beschreibung aller relevanten Stakeholder
-                  <br/>
-- Eine SWOT-Analyse um mögliche Potenziale und Herausforderungen zu identifizieren
-<br/>
-- Beschreibung & Analyse möglicher Handlungsfelder
-<br/>
-- Überführung der Ergebnisse in konkrete Next Steps
                   </p>
                 </div>
               </div>
               <div
-                onClick={() => createProduct(`VISIONS_WORKSHOP`)}
+                onClick={() => createProduct(`VISIONS_WORKSHOP`, "Ziel des Visions-Workshops ist es eine übergreifende Vision zu entwickeln.")}
                 className="customertype-card product-card-5"
               >
                 {" "}
                 <div className="customertype-text-container">
                   <p className="customertype-text-title">VISIONS-WORKSHOP</p>
                   <p className="customertype-text-description product-text-description">
-
-                  - Diskussion der Wettbewerbsanalyse
-<br/>
-- Diskussion der Bedürfnissanalyse
-
-<br/>
-
---> HINWEIS TILMAN: Wettbewerb & Stakeholderanalyse als optionale Produkte
-
-<br/>
-
-- Erarbeitung eines Nutzenversprechens
-<br/>
--Erarbeitung möglicher Ansätze für einen Nutzungsmix
-<br/>
-- Formulierung & Verabschiedung Vision
+                  Ziel des Visions-Workshops ist es eine übergreifende Vision zu entwickeln.
                   </p>
                 </div>
               </div>
               <div
-                onClick={() => createProduct(`INNOVATIONS_WORKSHOP`)}
+                onClick={() => createProduct(`INNOVATIONS_WORKSHOP`, "Ziel des Innovations-Workshops ist es Lösungsansätze für ein konkrete Problemstellung zu entwickeln.")}
                 className="customertype-card product-card-6"
               >
                 <div className="customertype-text-container">
                   <p className="customertype-text-title">INNOVATIONS-WORKSHOP</p>
                   <p className="customertype-text-description product-text-description">
-
-                  - Eine Analyse des Status Quo und Formulierung einer Design Challenge
-<br/>
-- Ideation Sprints
-<br/>
-- Impact Analyse
-<br/>
-- Beschreibung & Analyse möglicher Handlungsfelder
-<br/>
-- Überführung der Ergebnisse in konkrete Next Steps
+                  Ziel des Innovations-Workshops ist es Lösungsansätze für ein konkrete Problemstellung zu entwickeln.
                   </p>
                 </div>
               </div>

@@ -438,6 +438,7 @@ const PDFDocumentMain = ({ data }) => {
                   <Text style={styles.defaultTextBold}>{productNumber}.</Text>
                   <Text style={styles.defaultTextBold}>{product.name}</Text>
                 </View>
+                <Text style={styles.defaultText}>{product?.description}</Text>
                 <View style={styles.productListWrapper}>
                   {product?.modules?.map((modules) => {
                     return (
