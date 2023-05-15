@@ -54,6 +54,10 @@
   overflow: hidden;
 }
 
+.landing-heading > h1:nth-child(1) {
+  margin-bottom: 1.5rem;
+}
+
 h1 > div {
   transform: translateY(100%);
 }
