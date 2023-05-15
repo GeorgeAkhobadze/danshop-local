@@ -611,7 +611,7 @@ const PDFDocumentMain = ({ data }) => {
       </View>
       <Text
         style={[styles.pageNumber, styles.defaultText]}
-        render={({ pageNumber, totalPages }) => `${pageNumber} / ${totalPages}`}
+        render={(e) => `${e.subPageNumber} / ${e.subPageTotalPages}`}
         fixed
       />
       <Text style={[styles.bottomAngebot, styles.defaultText]} fixed>
@@ -759,7 +759,7 @@ const PDFDocumentMain = ({ data }) => {
             gestellten elektronischen Daten und physischen Unterlagen
             verpflichtet. Der Auftraggeber ist verpflichtet, die erbrachte
             Leistung innerhalb einer angemessenen Frist abzunehmen, wenn dan
-            pearlman ihm die im Wesentlichen vertragsgemäße Leistung zur
+            pearlman ihm die im Wesentlichen vertrffagsgemäße Leistung zur
             Verfügung gestellt hat. Die Leistung gilt als abgenommen, wenn der
             Auftraggeber nicht innerhalb von 10 Werktagen nach Lieferung
             widerspricht.
@@ -1114,7 +1114,7 @@ const PDFDocumentMain = ({ data }) => {
       </View>
       <Text
         style={[styles.pageNumber, styles.defaultText]}
-        render={({ pageNumber, totalPages }) => `${pageNumber} / ${totalPages}`}
+        render={(e) => `${e.subPageNumber} / ${e.subPageTotalPages}`}
         fixed
       />
     </Page>
