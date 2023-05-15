@@ -460,7 +460,7 @@ const PDFDocumentMain = ({ data }) => {
                                       </Text>
                                     </View>
                                     <Text style={styles.defaultText}>
-                                      {moduleItem?.hasInput ? moduleItem.interviewValue : moduleItem?.name}
+                                      {moduleItem?.hasInput ? `${moduleItem.interviewValue} ${moduleItem.name}` : moduleItem?.name}
                                     </Text>
                                   </View>
                                   {moduleItem?.note ? (

@@ -100,8 +100,8 @@ const ProductModules = () => {
                   price: 0,
                   hasInput: true,
                   checkbox: false,
-                  interviewValue: '4 Nutzerinterviews',
-                  interviewCount: [4, 6, 8]
+                  interviewValue: '4',
+                  interviewCount: [{count: 4, price: 9000}, {count: 6, price: 9300}, {count: 9, price: 9600}]
                 },
                 {
                   name: 'Stakeholderinterviews',
@@ -109,8 +109,8 @@ const ProductModules = () => {
                   price: 0,
                   hasInput: true,
                   checkbox: false,
-                  interviewValue: '3 Stakeholderinterviews',
-                  interviewCount: [3, 5, 10]
+                  interviewValue: '3',
+                  interviewCount: [{count: 4, price: 9000}, {count: 6, price: 9300}, {count: 9, price: 9600}]
                 }
               ],
             },
@@ -1204,8 +1204,8 @@ const ProductModules = () => {
                   price: 0,
                   hasInput: true,
                   checkbox: false,
-                  interviewValue: '4 Nutzerinterviews',
-                  interviewCount: [4, 6, 8]
+                  interviewValue: '4',
+                  interviewCount: [{count: 4, price: 9000}, {count: 6, price: 9300}, {count: 9, price: 9600}]
                 },
               ],
             },
@@ -1599,15 +1599,18 @@ const ProductModules = () => {
     setProduct({ ...product, modules: updatedModules });
   };
 
+
   const handleSelect = (e, elIndex) => {
-    console.log(e, elIndex)
+    const selectedItemIndex = e.target.selectedIndex
+
     const updatedModules = product?.modules.map((el, i) => {
       if (i !== elIndex) {
         return el;
       }
       const updatedModule = el?.module?.map((object) => {
+
         if (object.name === e.target.name) {
-          return { ...object, interviewValue: e.target.value };
+          return { ...object, interviewValue: e.target.value, price:  object.interviewCount[selectedItemIndex].price};
         }
         return object;
       });
@@ -1688,18 +1691,18 @@ const ProductModules = () => {
                             }
                             checked={module.checkbox}
                           />
-                          <select className="module-select-input" disabled={!module.checkbox} name={module.name} onChange={(e) => handleSelect(e, elIndex)}>
-                          {module.interviewCount.map((e) => {
-  const optionValue = `${e} ${module.name}`;
-  return (
-    <option
-      value={optionValue}
-      selected={optionValue === module.interviewValue}
-    >
-      {optionValue}
-    </option>
-  );
-})}
+                          <select data-amount="1000" className="module-select-input" disabled={!module.checkbox} name={module.name} onChange={(e) => handleSelect(e, elIndex)}>
+                          {module.interviewCount.map((e, i) => {
+                              const optionValue = `${e.count} ${module.name}`;
+                              return (
+                                <option
+                                  value={i}
+                                  selected={optionValue === module.interviewValue + module.name}
+                                >
+                                  {optionValue}
+                                </option>
+                              );
+                            })}
 
                           </select>
                           </label>
