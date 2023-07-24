@@ -1623,11 +1623,7 @@ const ProductModules = () => {
   const [modulesPrice, setModulesPrice] = useState();
   useEffect(() => {
     let modulesPrice = 0;
-    console.log(
-      product?.priceAmount,
-      product?.workshop.workshopLocationPrice,
-      product?.workshop.moderatorPrice
-    );
+
     product?.modules?.map((module) => {
       module?.module?.map((innerModule) => {
         if (innerModule?.checkbox == true) {
@@ -1651,9 +1647,7 @@ const ProductModules = () => {
     });
   }, [product]);
 
-  useEffect(() => {
 
-  }, [])
   return (
     <>
       <Header />
@@ -1744,7 +1738,7 @@ const ProductModules = () => {
           })}
           <div className="totalamount-container">
             <p>
-              <span>TOTAL:</span> {modulesPrice}€
+              <span>TOTAL:</span> {modulesPrice?.toLocaleString()}€
             </p>
           </div>
           <div className="buttons-container">

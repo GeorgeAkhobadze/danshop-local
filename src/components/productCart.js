@@ -46,12 +46,12 @@ const ProductCart = () => {
                 <div className="product-module-title">
                   <span>{product.name} </span>
                   <span className="product-title-price">
-                    {product.priceAmount} EUR
+                    {product.priceAmount?.toLocaleString()} EUR
+                    {console.log(product.priceAmount?.toLocaleString())}
                   </span>
                 </div>
                 <div className="module-list-container">
                   {product?.modules.map((module) => {
-                    console.log(module?.moduleNote);
                     return (
                       <div className="module-container module-container-cart">
                         <div className="module-heading-cart">
@@ -92,7 +92,7 @@ const ProductCart = () => {
         <div></div>
       </div>
       <div className="cart-price-container">
-        TOTAL<span>: {totalPrice}EUR</span>
+        TOTAL<span>: {totalPrice?.toLocaleString()}EUR</span>
       </div>
       <button
         className="generate-invoice-btn"
