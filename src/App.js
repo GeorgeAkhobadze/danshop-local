@@ -46,7 +46,7 @@ function App() {
         />
         <Route path="/:productId?/overview" element={<ProductOverview />} />
         <Route path="/cart" element={<ProductCart />} />
-        <Route path="/generate-invoice" element={<GenerateInvoice />} />
+        <Route path="/generate-offer" element={<GenerateInvoice />} />
       </Routes>
     </div>
   );

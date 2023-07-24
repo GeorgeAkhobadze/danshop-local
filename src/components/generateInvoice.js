@@ -31,12 +31,17 @@ const GenerateInvoice = () => {
   });
 
   useEffect(() => {
-    if (data.products) {
+    if (data.products !== undefined && data.products.length > 0) {
       const totalPrice = data.products.reduce((acc, product) => {
-        return acc + product.priceAmount;
+        if (product.priceAmount !== undefined) {
+          return acc + product.priceAmount;
+        }
+        return acc;
       }, 0);
+  
       const totalPriceFee = totalPrice * 0.06;
       const totalPriceWFee = totalPrice + totalPriceFee;
+  
       setData((prevData) => ({
         ...prevData,
         totalPrice,
@@ -45,7 +50,7 @@ const GenerateInvoice = () => {
       }));
     }
   }, [data.products]);
-
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     console.log(value);
@@ -255,9 +260,10 @@ const GenerateInvoice = () => {
           fileName="Angebot_Dan_Pearlman.pdf"
         >
           {({ blob, url, loading, error }) =>
-            loading ? "Loading document..." : "Generate PDF"
+           loading ? "Loading document..." : "Generate PDF"
           }
         </PDFDownloadLink>
+        
       </div>
     </>
   );

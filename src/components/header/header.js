@@ -27,7 +27,7 @@ const Header = (updated) => {
       <div>
         <img
           className="header-logo"
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/company_list")}
           src={location.pathname === "/" ? logoWhite : logoBlack}
         />
       </div>

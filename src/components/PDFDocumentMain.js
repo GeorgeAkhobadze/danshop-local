@@ -497,7 +497,7 @@ const PDFDocumentMain = ({ data }) => {
                   <View style={styles.productPriceContainer}>
                     <Text style={styles.defaultText}>Honorarsumme netto</Text>
                     <Text style={styles.defaultText}>
-                      {product?.priceAmount} €
+                      {product?.priceAmount?.toLocaleString()} €
                     </Text>
                   </View>
                 </View>
@@ -519,7 +519,7 @@ const PDFDocumentMain = ({ data }) => {
                     {productCount} {product?.name}
                   </Text>
                   <Text style={styles.defaultText}>
-                    {product?.priceAmount} €
+                    {product?.priceAmount?.toLocaleString()} €
                   </Text>
                 </View>
               );
@@ -529,18 +529,19 @@ const PDFDocumentMain = ({ data }) => {
         <View style={styles.serviceDefaultContainer}>
           <View style={styles.productPricesMapped}>
             <Text style={styles.defaultText}>Honorarsumme gesamt netto</Text>
-            <Text style={styles.defaultText}>{data?.totalPrice} €</Text>
+            <Text style={styles.defaultText}>{data?.totalPrice?.toLocaleString()} €</Text>
           </View>
           <View style={styles.spaceBetween}>
             <Text style={styles.defaultText}>Zzgl. Nebenkostenpauschale</Text>
             <Text style={styles.defaultText}>6%</Text>
-            <Text style={styles.defaultText}>{data?.totalPriceFee} €</Text>
+            <Text style={styles.defaultText}>{data?.totalPriceFee?.toLocaleString()} €</Text>
           </View>
           <View style={styles.productPricesMapped}>
             <Text style={styles.defaultTextBold}>
               Honorarsumme netto inkl. Nebenkostenpauschale
             </Text>
-            <Text style={styles.defaultTextBold}>{data?.totalPriceWFee} €</Text>
+            <Text style={styles.defaultTextBold}>{data?.totalPriceWFee?.toLocaleString()} €</Text>
+            {console.log(data?.totalPriceWFee)}
           </View>
         </View>
       </View>

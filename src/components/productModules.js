@@ -101,7 +101,7 @@ const ProductModules = () => {
                   hasInput: true,
                   checkbox: false,
                   interviewValue: '4',
-                  interviewCount: [{count: 4, price: 9000}, {count: 6, price: 9300}, {count: 9, price: 9600}]
+                  interviewCount: [{count: 4, price: 9000}, {count: 6, price: 9300}, {count: 8, price: 9600}]
                 },
                 {
                   name: 'Stakeholderinterviews',
@@ -110,7 +110,7 @@ const ProductModules = () => {
                   hasInput: true,
                   checkbox: false,
                   interviewValue: '3',
-                  interviewCount: [{count: 4, price: 9000}, {count: 6, price: 9300}, {count: 9, price: 9600}]
+                  interviewCount: [{count: 4, price: 9000}, {count: 6, price: 9300}, {count: 8, price: 9600}]
                 }
               ],
             },

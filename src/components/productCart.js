@@ -96,9 +96,9 @@ const ProductCart = () => {
       </div>
       <button
         className="generate-invoice-btn"
-        onClick={() => navigate("/generate-invoice")}
+        onClick={() => navigate("/generate-offer")}
       >
-        GENERATE INVOICE
+        GENERATE OFFER
       </button>
     </>
   );
