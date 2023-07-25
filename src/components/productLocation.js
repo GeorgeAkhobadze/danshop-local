@@ -56,7 +56,6 @@ const ProductLocation = () => {
   const [participantsSubmitted, setParticipantsSubmitted] = useState(false);
 
   const handleWorkshopChange = (field, value) => {
-    console.log(value == "At The Customer");
     if (value === "At The Customer") {
       const updatedProduct = {
         ...product,
@@ -79,7 +78,6 @@ const ProductLocation = () => {
           workshopPlace: "",
         },
       };
-      console.log(updatedProduct);
       updateChangesLocal(updatedProduct);
       setPage(2);
     } else {
@@ -93,7 +91,6 @@ const ProductLocation = () => {
           workshopPlace: "",
         },
       };
-      console.log(updatedProduct);
       updateChangesLocal(updatedProduct);
       setPage(2);
     }
@@ -125,7 +122,6 @@ const ProductLocation = () => {
 
   const updateModerators = (value) => {
     setParticipantCount(value * 1);
-    console.log(value > 12);
     if (value > 12) {
       setModeratorCount(2);
       setModeratorPrice(1500);
@@ -156,7 +152,6 @@ const ProductLocation = () => {
   };
 
   useEffect(() => {
-    console.log(participantsSubmitted);
     if (participantsSubmitted == true) {
       navigate(
         `/${product.name}/${product.workshop.workshopType}/${product.id}/modules`

@@ -38,7 +38,6 @@ const ProductType = () => {
     updateChangesLocal(updatedProduct);
     setMyObject(updatedProduct);
     if (updatedProduct?.workshop.workshopType == "Analog") {
-      console.log("why am i not moved");
       navigate(
         `/${updatedProduct?.name}/${updatedProduct?.workshop.workshopType}/${updatedProduct?.id}/location`
       );
@@ -46,7 +45,6 @@ const ProductType = () => {
   };
 
   useEffect(() => {
-    console.log(myObject)
     if (
       myObject?.name === "MARKENENTWICKLUNG" ||
       myObject?.name === "VISIONSENTWICKLUNG" ||
@@ -57,7 +55,6 @@ const ProductType = () => {
     ) {
       setPage(2);
     }
-    console.log(myObject?.workshop.workshopType);
   }, [handleWorkshopChange]);
 
   const handleWorkshopButton = (value) => {
@@ -82,7 +79,6 @@ const ProductType = () => {
       stagger: 0.3,
       delay: 0.7,
     });
-    console.log("IM LOGGED");
   }, [page]);
 
   return (

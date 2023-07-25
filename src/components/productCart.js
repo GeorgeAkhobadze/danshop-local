@@ -47,7 +47,6 @@ const ProductCart = () => {
                   <span>{product.name} </span>
                   <span className="product-title-price">
                     {product.priceAmount?.toLocaleString()} EUR
-                    {console.log(product.priceAmount?.toLocaleString())}
                   </span>
                 </div>
                 <div className="module-list-container">

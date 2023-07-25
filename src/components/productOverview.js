@@ -10,7 +10,6 @@ const ProductOverview = () => {
   const [updateState, setUpdateState] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
 
-  console.log(product);
   const updateChangesLocal = (updatedProduct) => {
     const existingArray = JSON.parse(localStorage.getItem("products"));
     const index = existingArray.findIndex((obj) => obj.id === productId);

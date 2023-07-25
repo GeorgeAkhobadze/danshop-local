@@ -53,7 +53,6 @@ const GenerateInvoice = () => {
   
   const handleChange = (e) => {
     const { name, value } = e.target;
-    console.log(value);
     setData((prevState) => ({
       ...prevState,
       [name]: value,

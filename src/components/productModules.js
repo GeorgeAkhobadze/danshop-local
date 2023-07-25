@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import Header from "./header/header";
-import ProductCreate from "./productCreate";
 import "./productModules.css";
 
 const ProductModules = () => {
@@ -10,7 +9,6 @@ const ProductModules = () => {
   const [product, setProduct] = useState(
     JSON.parse(localStorage.getItem("products"))[productId]
   );
-  const [totalPrice, setTotalPrice] = useState(0);
 
   const updateChangesLocal = (updatedProduct) => {
     const existingArray = JSON.parse(localStorage.getItem("products"));
@@ -24,7 +22,6 @@ const ProductModules = () => {
   };
 
   useEffect(() => {
-    console.log(product.modules.length, "GELAGELA");
     if (product?.modules.length === 0 || product?.modules.length === 1) {
       if (product.name === "MARKENENTWICKLUNG") {
         const updatedObject = {
@@ -71,7 +68,7 @@ const ProductModules = () => {
                 {
                   name: "Markenaudit inkl. Kickoff (digital) ",
                   hasCheckbox: false,
-                  price: 10000,
+                  price: 10600,
                   checkbox: true,
                   list: [
                     "• Einholung, Sichtung und Analyse der zur Verfügung stehenden bzw. gestellten Informationen und Arbeitsmaterialen für ein umfassendes Verständnis des Status Quo und der Rahmenbedingungen des Projektes. Die Unterlagen sind vom Auftraggeber an dp zu übergeben, z.B.",
@@ -85,7 +82,7 @@ const ProductModules = () => {
                 },
                 {
                   name: "Benchmark-Impuls",
-                  price: 5200,
+                  price: 5000,
                   hasCheckbox: false,
                   checkbox: true,
                   list: [
@@ -180,31 +177,31 @@ const ProductModules = () => {
                   name: "Markenarchitektur",
                   hasCheckbox: true,
                   checkbox: false,
-                  price: 200,
+                  price: 0,
                 },
                 {
                   name: "Product Naming",
                   hasCheckbox: true,
                   checkbox: false,
-                  price: 200,
+                  price: 8300,
                 },
                 {
                   name: "Product Logo",
                   hasCheckbox: true,
                   checkbox: false,
-                  price: 200,
+                  price: 13000,
                 },
                 {
                   name: "Corporate Identity",
                   hasCheckbox: true,
                   checkbox: false,
-                  price: 200,
+                  price: 0,
                 },
                 {
                   name: "Kommunikationsanalyse",
                   hasCheckbox: true,
                   checkbox: false,
-                  price: 200,
+                  price: 0,
                 },
               ],
             },
@@ -367,7 +364,7 @@ const ProductModules = () => {
         };
         updateChangesLocal(updatedObject);
         setProduct(updatedObject);
-      } else if (product.name == "NAMING") {
+      } else if (product.name === "NAMING") {
         const updatedObject = {
           ...product,
           modules: [
@@ -900,6 +897,23 @@ const ProductModules = () => {
               ],
             },
             {
+              title: "Addons",
+              module: [
+                {
+                  name: "Product Naming",
+                  hasCheckbox: true,
+                  checkbox: false,
+                  price: 8000,
+                },
+                {
+                  name: "Product Logo",
+                  hasCheckbox: true,
+                  checkbox: false,
+                  price: 13000,
+                },
+              ],
+            },
+            {
               title: "Allgemeine Leistungen Nachbereitung/ Dokumentation",
               module: [
                 {
@@ -1255,7 +1269,7 @@ const ProductModules = () => {
                   name: "Erstellung eines Pitch Deck CI: dp oder Kunden CI",
                   hasCheckbox: false,
                   checkbox: true,
-                  price: 14800,
+                  price: 15800,
                 },
                 {
                   name: "Übertragung in Mini CI",
@@ -1272,13 +1286,13 @@ const ProductModules = () => {
                   name: "Product Naming",
                   hasCheckbox: true,
                   checkbox: false,
-                  price: 8000,
+                  price: 8800,
                 },
                 {
                   name: "Product Logo",
                   hasCheckbox: true,
                   checkbox: false,
-                  price: 13000,
+                  price: 13900,
                 },
               ],
             },
@@ -1582,7 +1596,6 @@ const ProductModules = () => {
   }, []);
 
   const handleCheckbox = (e, index, moduleTitle, elIndex) => {
-    console.log(elIndex, e.target.name, e.target.checked, 'this my sht')
     const updatedModules = product?.modules.map((el, i) => {
       if (i !== elIndex) {
         return el;

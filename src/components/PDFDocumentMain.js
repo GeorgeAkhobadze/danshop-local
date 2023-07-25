@@ -318,7 +318,6 @@ const PDFDocumentMain = ({ data }) => {
   const [secondPageCount, setSecondPageCount] = useState(0);
 
   const handlePageRender = (data) => {
-    console.log(data)
     data.children.forEach((e) => {
       // console.log(e)
       // console.log(e.props.id)
@@ -329,13 +328,12 @@ const PDFDocumentMain = ({ data }) => {
     })
   };
 
-  console.log(secondPageCount)
 
   useEffect(() => {
     handlePageRender(documentRef.current)
 
   }, [documentRef])
-  console.log(secondPageCount)
+
   return(
     <Document>
     <Page id="product" size="A4" style={styles.page} ref={documentRef}>
@@ -541,7 +539,6 @@ const PDFDocumentMain = ({ data }) => {
               Honorarsumme netto inkl. Nebenkostenpauschale
             </Text>
             <Text style={styles.defaultTextBold}>{data?.totalPriceWFee?.toLocaleString()} €</Text>
-            {console.log(data?.totalPriceWFee)}
           </View>
         </View>
       </View>
